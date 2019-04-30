@@ -3,13 +3,12 @@
 ## Contents
 
 - Description
-- Setting up a live-build system
-- Configuring live-build
+- Requirements
+- Setting up the live-build system
   - Configuring the package list
 - Building the image
-- Saving the image
   - Configuring ssh for host-guest communication
-  - Transferring the image to the host machine via scp
+  - Backing up the image to the host machine via scp
 - Preparing installation media
 - Setting up the system
   - Ensuring everything is up-to-date
@@ -24,7 +23,13 @@ Configuration files for each variant can be found in [configs/kali/variants](htt
 
 **NOTE:** This guide is intended for personal use and may result in an undesired configuration.
 
-## Setting up a Kali live-build system
+## Requirements
+
+- A reliable internet connection
+- Windows 10
+- VirtualBox
+
+## Setting up the live-build system
 
 Install Kali Linux in a virtual machine. Ensure that the guest is on the same network as the host (necessary to transfer the compiled image to the host for safe-keeping). Use default Kali installation settings (ie. no encryption or fancy partitioning).
 
@@ -41,8 +46,6 @@ Install the necessary tools
 Clone the Kali live-build repository
 
 `git clone git://git.kali.org/live-build-config.git && cd live-build-config`
-
-## Setting up live-build
 
 ### Configuring the package list
 
@@ -72,8 +75,6 @@ Replace live-build-config/kali-config/variant-gnome/package-lists/kali.list.chro
 
 `./build.sh --verbose --distribution kali-rolling --variant gnome`
 
-## Saving the image
-
 ### Configuring ssh for host-guest communication
 
 Edit /etc/ssh/sshd_config to replace
@@ -92,7 +93,7 @@ Restart the ssh server
 
 `service ssh restart`
 
-### Transferring the image to the host machine via scp
+### Backing up the image to the host machine via scp
 
 From the host machine, run
 
@@ -104,9 +105,15 @@ The ISO image should now be on the desktop. If an error appears stating that rem
 
 ## Preparing installation media
 
+Use Rufus (download it [here](https://rufus.ie/)). Be sure to select DD write mode, otherwise the Kali installation process may fail.
+
 ## Setting up the system
 
 ### Ensuring everything is up-to-date
+
+`apt-get update && apt-get upgrade`
+
+`apt-get dist-upgrade`
 
 ### Configuring dconf schemas
 
