@@ -10,6 +10,7 @@
 - Saving the image
   - Configuring ssh for host-guest communication
   - Transferring the image to the host machine via scp
+- Resources
 
 ## Description
 
@@ -86,3 +87,8 @@ From the host machine, run
 The ISO image should now be on the desktop. If an error appears stating that remote host identification has failed, run
 
 `ssh-keygen -R GUEST_IP`
+
+## Resources
+
+Advanced Package Management in Kali Linux [https://www.kali.org/tutorials/advanced-package-management-in-kali-linux/](https://www.kali.org/tutorials/advanced-package-management-in-kali-linux/)
+https://docs.kali.org/general-use/kali-linux-sources-list-repositories
