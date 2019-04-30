@@ -115,7 +115,15 @@ Use Rufus (download it [here](https://rufus.ie/)). Be sure to select DD write mo
 
 `apt-get dist-upgrade`
 
-### Configuring dconf schemas
+### Configuring system settings
+
+#### Normal method
+
+#### Via dconf-editor
+
+Ensure dconf-editor is installed by running
+
+`apt-get install dconf-editor`
 
 ## Additional resources
 
