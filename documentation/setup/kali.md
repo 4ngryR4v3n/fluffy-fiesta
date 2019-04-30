@@ -10,7 +10,7 @@
 - Saving the image
   - Configuring ssh for host-guest communication
   - Transferring the image to the host machine via scp
-- Resources
+- Additional resources
 
 ## Description
 
@@ -66,8 +66,6 @@ Replace live-build-config/kali-config/variant-gnome/package-lists/kali.list.chro
 
 ## Building the image
 
-`chmod +x build.sh`
-
 `./build.sh --verbose --distribution kali-rolling --variant gnome`
 
 ## Saving the image
@@ -100,7 +98,10 @@ The ISO image should now be on the desktop. If an error appears stating that rem
 
 `ssh-keygen -R GUEST_IP`
 
-## Resources
+## Additional resources
 
+[02 - Building Custom Kali ISOs](https://docs.kali.org/kali-dojo/02-mastering-live-build)
 [Advanced Package Management in Kali Linux](https://www.kali.org/tutorials/advanced-package-management-in-kali-linux/)  
 [Kali Linux sources.list Repositories](https://docs.kali.org/general-use/kali-linux-sources-list-repositories)
+[live-build(7)](https://manpages.debian.org/testing/live-build/live-build.7.en.html)
+[Live Build a Custom Kali ISO](https://docs.kali.org/development/live-build-a-custom-kali-iso)
