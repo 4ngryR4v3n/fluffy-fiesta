@@ -1,19 +1,21 @@
 # Kali Linux Setup Documentation
 
+## Contents
+
+- Description
+- Setting up a live-build system
+- Configuring live-build
+  - Configuring the package list
+- Building the image
+- Saving the image
+  - Configuring ssh for host-guest communication
+  - Transferring the image to the host machine via scp
+
 ## Description
 
 This documentation outlines the steps necessary to build and install a customized Kali Linux image.
 
-**NOTE:** This guide is intended for personal use and may result in an undesired configuration. Any section marked with "⌥" is optional and can be configured to your liking.
-
-## Contents
-
-- Setting up a live-build system
-  - dd
-    - ⌥
-- Configuring live-build
-- Building the image
-- Back up the live-build configuration
+**NOTE:** This guide is intended for personal use and may result in an undesired configuration.
 
 ### Setting up a Kali live-build system
 
@@ -33,9 +35,9 @@ Clone the Kali live-build repository
 
 `git clone git://git.kali.org/live-build-config.git && cd live-build-config`
 
-### Configuring Kali live-build
+### Configuring live-build
 
-#### Configure package lists
+#### Configuring the package list
 
 Edit ~/live-build-config/kali-config/variant-gnome/package-lists/kali.list.chroot:
 
@@ -61,7 +63,7 @@ Edit ~/live-build-config/kali-config/variant-gnome/package-lists/kali.list.chroo
 
 `./build.sh --verbose --distribution kali-rolling --variant gnome`
 
-### Transferring the image
+### Saving the image
 
 #### Configuring ssh for host-guest communication
 
@@ -81,7 +83,7 @@ Restart the ssh server
 
 `service ssh restart`
 
-#### Transfer the image via scp
+#### Transferring the image to the host machine via scp
 
 From the host machine, run
 
