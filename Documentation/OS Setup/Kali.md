@@ -1,7 +1,7 @@
 # Kali Linux Setup Documentation
 
 ## Contents
-- [Setting up a live-build system](## setting-up-a-live-build-system)
+- [Setting up a live-build system](##setting-up-a-live-build-system)
 - Configuring live-build
 - Building the image
 - Transferring live-build configuration from guest to host for safe-keeping
