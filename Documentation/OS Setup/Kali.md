@@ -1,16 +1,12 @@
-﻿FOR USE WITH KALI LINUX ONLY
-
+#FOR USE WITH KALI LINUX ONLY
 
 1. Set up a Kali system for custom image development
 
-
 Install Kali Linux in a virtual machine connected to a bridged network (necessary for transfer of image source from guest to host for safe-keeping). Use stock Kali installation settings (ie. no encryption or fancy partitioning).
-
 
 NOTE: If /etc/apt/sources.list is empty, copy the latest repositories from here: https://docs.kali.org/general-use/kali-linux-sources-list-repositories
 
-
-1. Prepare development system
+2. Prepare development system
 
 
 $ apt-get update && apt-get upgrade
