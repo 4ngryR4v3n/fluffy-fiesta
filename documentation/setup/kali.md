@@ -1,4 +1,4 @@
-# Kali Linux Custom Installation Image Creation and Setup
+# Kali Linux Setup
 
 ## Contents
 
@@ -13,7 +13,9 @@
 
 ## Description
 
-This documentation outlines the steps necessary to build and install a customized Kali Linux image.
+This documentation outlines the steps necessary to build, install, and configure a customized Kali Linux image for use as a primary penetration testing system.
+
+Configuration files for each variant can be found in [configs/kali/variants](configs/kali/variants).
 
 **NOTE:** This guide is intended for personal use and may result in an undesired configuration.
 
@@ -39,7 +41,7 @@ Clone the Kali live-build repository
 
 #### Configuring the package list
 
-Edit ~/live-build-config/kali-config/variant-gnome/package-lists/kali.list.chroot:
+Copy live-build-config/kali-config/variant-gnome/package-lists/kali.list.chroot:
 
 ##### Add:
 
