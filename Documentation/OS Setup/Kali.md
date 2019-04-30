@@ -55,7 +55,13 @@ Edit ~/live-build-config/kali-config/variant-gnome/package-lists/kali.list.chroo
 
 ## Back up the live-build configuration
 
-Edit /etc/ssh/sshd_config to replace "PermitRootLogin prohibit-password" with "PermitRootLogin yes."
+Edit /etc/ssh/sshd_config to replace
+
+`PermitRootLogin prohibit-password`
+
+with
+
+`PermitRootLogin yes.`
 
 Restart the ssh server
 
