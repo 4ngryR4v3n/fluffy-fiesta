@@ -15,7 +15,7 @@
 
 This documentation outlines the steps necessary to build, install, and configure a customized Kali Linux image for use as a primary penetration testing system.
 
-Configuration files for each variant can be found in [configs/kali/variants](fluffy-fiesta/configs/kali/variants).
+Configuration files for each variant can be found in [configs/kali/variants](https://github.com/Perdyx/fluffy-fiesta/tree/master/configs/kali/variants).
 
 **NOTE:** This guide is intended for personal use and may result in an undesired configuration.
 
