@@ -10,6 +10,10 @@
 - Saving the image
   - Configuring ssh for host-guest communication
   - Transferring the image to the host machine via scp
+- Preparing installation media
+- Setting up the system
+  - Ensuring everything is up-to-date
+  - Configuring dconf schemas
 - Additional resources
 
 ## Description
@@ -97,6 +101,14 @@ From the host machine, run
 The ISO image should now be on the desktop. If an error appears stating that remote host identification has failed, run
 
 `ssh-keygen -R GUEST_IP`
+
+## Preparing installation media
+
+## Setting up the system
+
+### Ensuring everything is up-to-date
+
+### Configuring dconf schemas
 
 ## Additional resources
 
