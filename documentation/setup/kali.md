@@ -41,23 +41,7 @@ Clone the Kali live-build repository
 
 #### Configuring the package list
 
-Copy live-build-config/kali-config/variant-gnome/package-lists/kali.list.chroot:
-
-##### Add:
-
-- kali-linux-top10
-- git
-- gnome-shell-extension-autohidetopbar
-- gnome-shell-extension-caffeine
-- gnome-shell-extension-disconnect-wifi
-- gnome-shell-extension-impatience
-- gnome-shell-extension-remove-dropdown-arrows
-- vim
-- htop
-
-##### Remove:
-
-- kali-linux-full
+Copy live-build-config/kali-config/variant-gnome/package-lists/kali.list.chroot from [configs/kali/variants](https://github.com/Perdyx/fluffy-fiesta/tree/master/configs/kali/variants) according to your prefferred variant.
 
 ### Building the image
 
