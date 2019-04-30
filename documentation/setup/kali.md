@@ -90,5 +90,5 @@ The ISO image should now be on the desktop. If an error appears stating that rem
 
 ## Resources
 
-Advanced Package Management in Kali Linux [https://www.kali.org/tutorials/advanced-package-management-in-kali-linux/](https://www.kali.org/tutorials/advanced-package-management-in-kali-linux/)
-https://docs.kali.org/general-use/kali-linux-sources-list-repositories
+[Advanced Package Management in Kali Linux](https://www.kali.org/tutorials/advanced-package-management-in-kali-linux/)
+[Kali Linux sources.list Repositories](https://docs.kali.org/general-use/kali-linux-sources-list-repositories)
