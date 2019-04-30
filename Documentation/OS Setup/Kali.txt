@@ -1,0 +1,51 @@
+﻿FOR USE WITH KALI LINUX ONLY
+
+
+1. Set up a Kali system for custom image development
+
+
+Install Kali Linux in a virtual machine connected to a bridged network (necessary for transfer of image source from guest to host for safe-keeping). Use stock Kali installation settings (ie. no encryption or fancy partitioning).
+
+
+NOTE: If /etc/apt/sources.list is empty, copy the latest repositories from here: https://docs.kali.org/general-use/kali-linux-sources-list-repositories
+
+
+1. Prepare development system
+
+
+$ apt-get update && apt-get upgrade
+$ apt-get install git live-build cdebootstrap
+$ git clone git://git.kali.org/live-build-config.git && cd live-build-config
+
+
+1. Configure package list
+
+
+Edit ~/live-build-config/kali-config/variant-gnome/package-lists/kali.list.chroot:
+
+
+- kali-linux-full
+
+
++ kali-linux-top10
++ git
++ gnome-shell-extension-autohidetopbar
++ gnome-shell-extension-caffeine
++ gnome-shell-extension-disconnect-wifi
++ gnome-shell-extension-impatience
++ gnome-shell-extension-remove-dropdown-arrows
++ vim
++ htop
+
+
+1. Build custom image
+
+
+$ ./build.sh --distribution kali-rolling --variant gnome --verbose
+
+
+1. Transfer image source from guest to host
+
+
+From host machine:
+$ scp -r root@GUEST_IP:~/live-build/ C:\live-build\
