@@ -1,12 +1,12 @@
 # Kali Linux Setup Documentation
 
 ## Contents
-- [Setting up a live-build system](#setting-up-a-live-build-system)
+- Setting up a live-build system
 - Configuring live-build
 - Building the image
 - Transferring live-build configuration from guest to host for safe-keeping
 
-## Setting up a Kali live build system
+## Setting up a Kali live-build system
 
 Install Kali Linux in a virtual machine connected to a bridged network (necessary for transfer of image source from guest to host for safe-keeping). Use default Kali installation settings (ie. no encryption or fancy partitioning).
 
