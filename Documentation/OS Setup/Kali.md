@@ -63,7 +63,7 @@ Restart the ssh server
 
 From the host machine, run
 
-`scp -r root@GUEST_IP:~/live-build/images/FILENAME.iso C:\FILENAME.iso`
+`scp -r root@GUEST_IP:~/live-build/images/kali-linux-gnome-rolling-amd64.iso C:\kali-linux-gnome-rolling-amd64.iso`
 
 If an error appears stating that remote host identification has failed, run
 
