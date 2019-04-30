@@ -5,6 +5,7 @@
 - Setting up a live-build system
 - Configuring live-build
 - Building the image
+- Back up the live-build configuration
 
 ## Setting up a Kali live-build system
 
@@ -48,14 +49,22 @@ Edit ~/live-build-config/kali-config/variant-gnome/package-lists/kali.list.chroo
 
 ## Building the image
 
-### Initiate the build process
-
 `chmod +x build.sh`
 
 `./build.sh --distribution kali-rolling --variant gnome --verbose`
 
-### Transferring live-build configuration from guest to host for safe-keeping
+## Back up the live-build configuration
+
+Change "PermitRootLogin prohibit-password" to "PermitRootLogin yes" in /etc/ssh/sshd_config.
+
+Restart the ssh server
+
+`service ssh restart`
 
 From the host machine, run
 
-`scp -r root@GUEST_IP:~/live-build/ C:\live-build\`
+`scp -r root@GUEST_IP:~/live-build/ C:\live-build-config\`
+
+If an error appears stating that remote host identification has failed, run
+
+`ssh-keygen -R GUEST_IP`
