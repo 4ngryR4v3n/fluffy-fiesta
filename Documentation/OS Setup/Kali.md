@@ -10,6 +10,7 @@ This documentation outlines the steps necessary to build and install a customize
 
 - Setting up a live-build system
   - dd
+    - ⌥
 - Configuring live-build
 - Building the image
 - Back up the live-build configuration
