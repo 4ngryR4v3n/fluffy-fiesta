@@ -1,15 +1,22 @@
 # Kali Linux Setup Documentation
 
+## Description
+
+This documentation outlines the steps necessary to build and install a customized Kali Linux image.
+
+**NOTE:** This guide is intended for personal use and may result in an undesired configuration. Any section marked with "⌥" is optional and can be configured to your liking.
+
 ## Contents
 
 - Setting up a live-build system
+  - dd
 - Configuring live-build
 - Building the image
 - Back up the live-build configuration
 
-## Setting up a Kali live-build system
+### Setting up a Kali live-build system
 
-Install Kali Linux in a virtual machine connected to a bridged network (necessary for transfer of image source from guest to host for safe-keeping). Use default Kali installation settings (ie. no encryption or fancy partitioning).
+Install Kali Linux in a virtual machine. Ensure that the guest is on the same network as the host (necessary to transfer the compiled image to the host for safe-keeping). Use default Kali installation settings (ie. no encryption or fancy partitioning).
 
 Update and upgrade the system
 
@@ -25,13 +32,13 @@ Clone the Kali live-build repository
 
 `git clone git://git.kali.org/live-build-config.git && cd live-build-config`
 
-## Configuring Kali live-build
+### Configuring Kali live-build
 
-### Configure package lists
+#### Configure package lists
 
 Edit ~/live-build-config/kali-config/variant-gnome/package-lists/kali.list.chroot:
 
-#### Add:
+##### Add:
 
 - kali-linux-top10
 - git
@@ -43,17 +50,19 @@ Edit ~/live-build-config/kali-config/variant-gnome/package-lists/kali.list.chroo
 - vim
 - htop
 
-#### Remove:
+##### Remove:
 
 - kali-linux-full
 
-## Building the image
+### Building the image
 
 `chmod +x build.sh`
 
-`./build.sh --distribution kali-rolling --variant gnome --verbose`
+`./build.sh --verbose --distribution kali-rolling --variant gnome`
 
-## Back up the live-build configuration
+### Transferring the image
+
+#### Configuring ssh for host-guest communication
 
 Edit /etc/ssh/sshd_config to replace
 
@@ -63,14 +72,20 @@ with
 
 `PermitRootLogin yes.`
 
+Enable the ssh server to automatically launch on startup
+
+`systemctl enable ssh`
+
 Restart the ssh server
 
 `service ssh restart`
 
+#### Transfer the image via scp
+
 From the host machine, run
 
-`scp -r root@GUEST_IP:~/live-build/images/kali-linux-gnome-rolling-amd64.iso C:\kali-linux-gnome-rolling-amd64.iso`
+`scp root@GUEST_IP:~/live-build-config/images/kali-linux-gnome-rolling-amd64.iso C:\Users\USERNAME\Desktop\kali-linux-gnome-rolling-amd64.iso`
 
-If an error appears stating that remote host identification has failed, run
+The ISO image should now be on the desktop. If an error appears stating that remote host identification has failed, run
 
 `ssh-keygen -R GUEST_IP`
