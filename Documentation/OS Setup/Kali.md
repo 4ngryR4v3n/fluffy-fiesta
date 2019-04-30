@@ -10,9 +10,9 @@
 
 Install Kali Linux in a virtual machine connected to a bridged network (necessary for transfer of image source from guest to host for safe-keeping). Use default Kali installation settings (ie. no encryption or fancy partitioning).
 
-If /etc/apt/sources.list is empty, copy the latest repositories from [here](https://docs.kali.org/general-use/kali-linux-sources-list-repositories).
-
 `apt-get update && apt-get upgrade`
+
+If this fails, /etc/apt/sources.list is probably empty. Copy the latest repositories from [here](https://docs.kali.org/general-use/kali-linux-sources-list-repositories).
 
 `apt-get install git live-build cdebootstrap`
 
