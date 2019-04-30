@@ -46,11 +46,11 @@ Replace live-build-config/kali-config/variant-gnome/package-lists/kali.list.chro
 
 #### Development ([source](https://github.com/Perdyx/fluffy-fiesta/blob/master/configs/kali/variants/development/live-build-config/kali-config/variant-gnome/package-lists/kali.list.chroot))
 
-`wget https://raw.githubusercontent.com/Perdyx/fluffy-fiesta/master/configs/kali/variants/development/live-build-config/kali-config/variant-gnome/package-lists/kali.list.chroot kali-config/variant-gnome/package-lists/kali.list.chroot`
+`wget https://raw.githubusercontent.com/Perdyx/fluffy-fiesta/master/configs/kali/variants/development/live-build-config/kali-config/variant-gnome/package-lists/kali.list.chroot -O kali-config/variant-gnome/package-lists/kali.list.chroot`
 
 #### Pentesting ([source](https://github.com/Perdyx/fluffy-fiesta/blob/master/configs/kali/variants/pentesting/live-build-config/kali-config/variant-gnome/package-lists/kali.list.chroot))
 
-`wget https://raw.githubusercontent.com/Perdyx/fluffy-fiesta/master/configs/kali/variants/pentesting/live-build-config/kali-config/variant-gnome/package-lists/kali.list.chroot kali-config/variant-gnome/package-lists/kali.list.chroot`
+`wget https://raw.githubusercontent.com/Perdyx/fluffy-fiesta/master/configs/kali/variants/pentesting/live-build-config/kali-config/variant-gnome/package-lists/kali.list.chroot -O kali-config/variant-gnome/package-lists/kali.list.chroot`
 
 ## Building the image
 
