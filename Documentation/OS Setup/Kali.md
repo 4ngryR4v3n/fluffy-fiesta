@@ -1,4 +1,4 @@
-# Kali Linux Setup Documentation
+# Kali Linux Custom Installation Image Creation and Setup
 
 ## Contents
 
