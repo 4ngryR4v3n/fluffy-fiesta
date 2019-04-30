@@ -41,7 +41,11 @@ Clone the Kali live-build repository
 
 #### Configuring the package list
 
-Copy live-build-config/kali-config/variant-gnome/package-lists/kali.list.chroot from [configs/kali/variants](https://github.com/Perdyx/fluffy-fiesta/tree/master/configs/kali/variants) according to your prefferred variant.
+Replace live-build-config/kali-config/variant-gnome/package-lists/kali.list.chroot with that of your desired variant
+
+##### Pentesting
+
+`git clone raw...`
 
 ### Building the image
 
