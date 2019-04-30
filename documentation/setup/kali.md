@@ -19,7 +19,7 @@ Configuration files for each variant can be found in [configs/kali/variants](htt
 
 **NOTE:** This guide is intended for personal use and may result in an undesired configuration.
 
-### Setting up a Kali live-build system
+## Setting up a Kali live-build system
 
 Install Kali Linux in a virtual machine. Ensure that the guest is on the same network as the host (necessary to transfer the compiled image to the host for safe-keeping). Use default Kali installation settings (ie. no encryption or fancy partitioning).
 
@@ -37,25 +37,25 @@ Clone the Kali live-build repository
 
 `git clone git://git.kali.org/live-build-config.git && cd live-build-config`
 
-### Configuring live-build
+## Configuring live-build
 
-#### Configuring the package list
+### Configuring the package list
 
 Replace live-build-config/kali-config/variant-gnome/package-lists/kali.list.chroot with that of your desired variant.
 
-##### Pentesting ([source](https://github.com/Perdyx/fluffy-fiesta/blob/master/configs/kali/variants/pentesting/live-build-config/kali-config/variant-gnome/package-lists/kali.list.chroot))
+#### Pentesting ([source](https://github.com/Perdyx/fluffy-fiesta/blob/master/configs/kali/variants/pentesting/live-build-config/kali-config/variant-gnome/package-lists/kali.list.chroot))
 
 `git clone https://raw.githubusercontent.com/Perdyx/fluffy-fiesta/master/configs/kali/variants/pentesting/live-build-config/kali-config/variant-gnome/package-lists/kali.list.chroot kali-config/variant-gnome/package-lists/kali.list.chroot`
 
-### Building the image
+## Building the image
 
 `chmod +x build.sh`
 
 `./build.sh --verbose --distribution kali-rolling --variant gnome`
 
-### Saving the image
+## Saving the image
 
-#### Configuring ssh for host-guest communication
+### Configuring ssh for host-guest communication
 
 Edit /etc/ssh/sshd_config to replace
 
@@ -73,7 +73,7 @@ Restart the ssh server
 
 `service ssh restart`
 
-#### Transferring the image to the host machine via scp
+### Transferring the image to the host machine via scp
 
 From the host machine, run
 
