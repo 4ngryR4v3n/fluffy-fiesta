@@ -10,11 +10,17 @@
 
 Install Kali Linux in a virtual machine connected to a bridged network (necessary for transfer of image source from guest to host for safe-keeping). Use default Kali installation settings (ie. no encryption or fancy partitioning).
 
+Update and upgrade the system
+
 `apt-get update && apt-get upgrade`
 
 If this fails, /etc/apt/sources.list is probably empty. Copy the latest repositories from [here](https://docs.kali.org/general-use/kali-linux-sources-list-repositories).
 
+Install the necessary tools
+
 `apt-get install git live-build cdebootstrap`
+
+Clone the Kali live-build repository
 
 `git clone git://git.kali.org/live-build-config.git && cd live-build-config`
 
@@ -37,6 +43,12 @@ Edit ~/live-build-config/kali-config/variant-gnome/package-lists/kali.list.chroo
 - kali-linux-full
 
 ## Building the image
+
+Give build.sh execute permissions
+
+`chmod +x build.sh`
+
+Initiate build process
 
 `./build.sh --distribution kali-rolling --variant gnome --verbose`
 
