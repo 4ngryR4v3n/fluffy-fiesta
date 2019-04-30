@@ -70,8 +70,10 @@ with
 
 `PermitRootLogin yes.`
 
-Enable the ssh server to automatically launch on startup  
-`systemctl enable ssh`  
+Enable the ssh server to automatically launch on startup
+
+`systemctl enable ssh`
+
 Restart the ssh server
 
 `service ssh restart`
