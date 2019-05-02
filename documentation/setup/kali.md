@@ -14,8 +14,6 @@
   - Creating a non-root user
   - Ensuring everything is up-to-date
   - Configuring dconf schemas
-- Installing tor services
-- Hardening Kali
 - Additional resources
 
 ## Description
@@ -185,10 +183,6 @@ Configure Dash to Dock
 `sudo gsettings set org.gnome.shell.extensions.dash-to-dock transparency-mode "FIXED"`
 
 `sudo gsettings set org.gnome.shell.extensions.dash-to-dock background-opacity "0"`
-
-## Installing tor services
-
-## Hardening Kali
 
 ## Further configuration
 
