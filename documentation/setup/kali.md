@@ -11,6 +11,7 @@
   - Transferring the image to the host machine via scp
 - Preparing installation media
 - Setting up the system
+  - Creating a non-root user
   - Ensuring everything is up-to-date
   - Configuring dconf schemas
 - Installing tor services
@@ -109,11 +110,33 @@ For extra security, select "Separate /home, /usr, /var, and /tmp partitions" and
 
 After the installation completes and the system reboots, log into the root user and open a terminal.
 
+### Creating a non-root user
+
+Add a new user
+
+`useradd -m USERNAME`
+
+**NOTE:** The -m flag creates a home directory for the new user (this is recommended, but not necessary).
+
+Set a password for the new user. It is best practice to set this to something other than the root or disk encryption passwords
+
+`passwd USERNAME`
+
+Add the new user to the "sudoers" group
+
+`usermod -a -G sudo USERNAME`
+
+Specify a default shell for the new user
+
+`chsh -s /bin/bash`
+
+Log out and log back in as the new user before proceeding.
+
 ### Ensuring everything is up-to-date
 
-`apt-get update && apt-get upgrade`
+`sudo apt-get update && apt-get upgrade`
 
-`apt-get dist-upgrade`
+`sudo apt-get dist-upgrade`
 
 ### Configuring system settings
 
@@ -125,57 +148,57 @@ From the home directory, execute
 
 `chmod +x setup.sh`
 
-`./setup.sh`
+`sudo ./setup.sh`
 
 #### Manually
 
 Ensure dconf-editor is installed
 
-`apt-get install dconf-editor`
+`sudo apt-get install dconf-editor`
 
 Change time display format
 
-`gsettings set org.gnome.desktop.interface clock-format "12h"`
+`sudo gsettings set org.gnome.desktop.interface clock-format "12h"`
 
-`gsettings set org.gnome.desktop.calendar show-weekdate "true"`
+`sudo gsettings set org.gnome.desktop.calendar show-weekdate "true"`
 
 Turn set up touchpad (only necessary for laptops)
 
-`gsettings set org.gnome.peripherals.touchpad tap-to-click "true"`
+`sudo gsettings set org.gnome.peripherals.touchpad tap-to-click "true"`
 
 Set up extensions
 
-`gnome-shell-extension-tool -e alternate-tab@gnome-shell-extensions.gcampax.github.com`
+`sudo gnome-shell-extension-tool -e alternate-tab@gnome-shell-extensions.gcampax.github.com`
 
-`gnome-shell-extension-tool -e caffeine@patapon.info`
+`sudo gnome-shell-extension-tool -e caffeine@patapon.info`
 
-`gnome-shell-extension-tool -d desktop-icons@csoriano`
+`sudo gnome-shell-extension-tool -d desktop-icons@csoriano`
 
-`gnome-shell-extension-tool -e disconnect-wifi@kgshank.net`
+`sudo gnome-shell-extension-tool -e disconnect-wifi@kgshank.net`
 
-`gnome-shell-extension-tool -d EasyScreenCast@iacopodeenosee.gmail.com`
+`sudo gnome-shell-extension-tool -d EasyScreenCast@iacopodeenosee.gmail.com`
 
-`gnome-shell-extension-tool -e impatience@gfxmonk.net`
+`sudo gnome-shell-extension-tool -e impatience@gfxmonk.net`
 
-`gnome-shell-extension-tool -e drive-menu@gnome-shell-extensions.gcampax.github.com`
+`sudo gnome-shell-extension-tool -e drive-menu@gnome-shell-extensions.gcampax.github.com`
 
 Configure Dash to Dock
 
-`gsettings set org.gnome.shell.extensions.dash-to-dock require-pressure-to-show "false"`
+`sudo gsettings set org.gnome.shell.extensions.dash-to-dock require-pressure-to-show "false"`
 
-`gsettings set org.gnome.shell.extensions.dash-to-dock intellihide-mode "ALL_WINDOWS"`
+`sudo gsettings set org.gnome.shell.extensions.dash-to-dock intellihide-mode "ALL_WINDOWS"`
 
-`gsettings set org.gnome.shell.extensions.dash-to-dock animate-show-apps "false"`
+`sudo gsettings set org.gnome.shell.extensions.dash-to-dock animate-show-apps "false"`
 
-`gsettings set org.gnome.shell.extensions.dash-to-dock click-action "minimize"`
+`sudo gsettings set org.gnome.shell.extensions.dash-to-dock click-action "minimize"`
 
-`gsettings set org.gnome.shell.extensions.dash-to-dock scroll-action "switch-workspace"`
+`sudo gsettings set org.gnome.shell.extensions.dash-to-dock scroll-action "switch-workspace"`
 
-`gsettings set org.gnome.shell.extensions.dash-to-dock custom-theme-shrink "false"`
+`sudo gsettings set org.gnome.shell.extensions.dash-to-dock custom-theme-shrink "false"`
 
-`gsettings set org.gnome.shell.extensions.dash-to-dock transparency-mode "FIXED"`
+`sudo gsettings set org.gnome.shell.extensions.dash-to-dock transparency-mode "FIXED"`
 
-`gsettings set org.gnome.shell.extensions.dash-to-dock background-opacity "0"`
+`sudo gsettings set org.gnome.shell.extensions.dash-to-dock background-opacity "0"`
 
 ## Installing tor services
 
