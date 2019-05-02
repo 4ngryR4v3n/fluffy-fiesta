@@ -112,23 +112,9 @@ After the installation completes and the system reboots, log into the root user 
 
 ### Creating a non-root user
 
-Add a new user
+Open gnome-control-center (this can be accessed either via typing "gnome-control-center" in a terminal, or by going to the status area on the right of the panel and selecting the settings icon). Navigate to Details/Users and click the "Add User..." button. Select "Administrator" under "Account Type" and fill in the rest before clicking "Add."
 
-`useradd -m USERNAME`
-
-**NOTE:** The -m flag creates a home directory for the new user (this is recommended, but not necessary).
-
-Set a password for the new user. It is best practice to set this to something other than the root or disk encryption passwords
-
-`passwd USERNAME`
-
-Add the new user to the "sudoers" group
-
-`usermod -a -G sudo USERNAME`
-
-Specify a default shell for the new user
-
-`chsh -s /bin/bash`
+**NOTE:** It is best practice to set the user's password to something other than the root or disk encryption passwords.
 
 Log out and log back in as the new user before proceeding.
 
