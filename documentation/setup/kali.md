@@ -117,6 +117,16 @@ Use Rufus (download it [here](https://rufus.ie/)). Be sure to select DD write mo
 
 ### Configuring system settings
 
+#### Via script
+
+`wget https://raw.githubusercontent.com/Perdyx/fluffy-fiesta/master/scripts/setup/kali.sh -O ~/setup.sh`
+
+`chmod +x setup.sh`
+
+`./setup.sh`
+
+#### Manually
+
 Ensure dconf-editor is installed
 
 `apt-get install dconf-editor`
@@ -147,7 +157,7 @@ Set up extensions
 
 `gnome-shell-extension-tool -e drive-menu@gnome-shell-extensions.gcampax.github.com`
 
-#### Configure Dash to Dock
+Configure Dash to Dock
 
 `gsettings set org.gnome.shell.extensions.dash-to-dock require-pressure-to-show "false"`
 
