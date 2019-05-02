@@ -147,7 +147,7 @@ Set up extensions
 
 `gnome-shell-extension-tool -e drive-menu@gnome-shell-extensions.gcampax.github.com`
 
-##### Configure Dash to Dock
+#### Configure Dash to Dock
 
 `gsettings set org.gnome.shell.extensions.dash-to-dock require-pressure-to-show "false"`
 
