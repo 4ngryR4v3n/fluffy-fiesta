@@ -13,7 +13,6 @@
 - Setting up the system
   - Ensuring everything is up-to-date
   - Configuring dconf schemas
-- Installing and configuring zsh and oh-my-zsh
 - Installing tor services
 - Hardening Kali
 - Additional resources
@@ -120,6 +119,8 @@ After the installation completes and the system reboots, log into the root user 
 
 #### Via script ([source](https://github.com/Perdyx/fluffy-fiesta/blob/master/scripts/setup/kali.sh))
 
+From the home directory, execute
+
 `wget https://raw.githubusercontent.com/Perdyx/fluffy-fiesta/master/scripts/setup/kali.sh -O ~/setup.sh`
 
 `chmod +x setup.sh`
@@ -176,31 +177,13 @@ Configure Dash to Dock
 
 `gsettings set org.gnome.shell.extensions.dash-to-dock background-opacity "0"`
 
-## Installing and configuring zsh and oh-my-zsh
-
-### Installing zsh
-
-Install zsh
-
-`apt install zsh`
-
-Set zsh as the default shell
-
-`chsh -s /bin/zsh`
-
-After setting the default shell, a reboot is necessary for the changes to take effect.
-
-### Installing oh-my-zsh
-
-`sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"`
-
-### Installing Pure for zsh
-
-``
-
 ## Installing tor services
 
 ## Hardening Kali
+
+## Further configuration
+
+Set up any custom dotfiles (terminator, vim, etc.). Check out [https://github.com/Perdyx/fluffy-fiesta/tree/master/configs](https://github.com/Perdyx/fluffy-fiesta/tree/master/configs).
 
 ## Additional resources
 
