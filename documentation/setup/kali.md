@@ -8,7 +8,7 @@
   - Configuring the package list
 - Building the image
   - Configuring ssh for host-guest communication
-  - Backing up the image to the host machine via scp
+  - Transferring the image to the host machine via scp
 - Preparing installation media
 - Setting up the system
   - Ensuring everything is up-to-date
@@ -17,21 +17,21 @@
 
 ## Description
 
-This documentation outlines the steps necessary to build, install, and configure a customized Kali Linux image for use as a primary penetration testing system.
+This documentation outlines the steps necessary to build, install, and configure a customized [Kali Linux](https://www.kali.org/) image for use as a primary penetration testing system.
 
 Configuration files for each variant can be found in [configs/kali/variants](https://github.com/Perdyx/fluffy-fiesta/tree/master/configs/kali/variants).
 
-**NOTE:** This guide is intended for personal use and may result in an undesired configuration.
+**NOTE:** This guide is intended for personal use and may result in undesired functionality.
 
 ## Requirements
 
-- A reliable internet connection
+- Reliable internet connection
 - Windows 10
-- VirtualBox
+- Hypervisor (preferrably [VirtualBox](https://www.virtualbox.org/))
 
 ## Setting up the live-build system
 
-Install Kali Linux in a virtual machine. Ensure that the guest is on the same network as the host (necessary to transfer the compiled image to the host for safe-keeping). Use default Kali installation settings (ie. no encryption or fancy partitioning).
+Download the latest Kali Linux build from [here](https://www.kali.org/downloads/) and install it in a virtual machine. Use default Kali installation settings (ie. no encryption or fancy partitioning). Additionally, set up bridged networking in order to transfer compiled image from guest to host (see []() for more information).
 
 Update and upgrade the system
 
@@ -93,7 +93,7 @@ Restart the ssh server
 
 `service ssh restart`
 
-### Backing up the image to the host machine via scp
+### Transferring the image to the host machine via scp
 
 From the host machine, run
 
@@ -105,9 +105,19 @@ The ISO image should now be on the desktop. If an error appears stating that rem
 
 ## Preparing installation media
 
-Use Rufus (download it [here](https://rufus.ie/)). Be sure to select DD write mode, otherwise the Kali installation process may fail.
+Download [Rufus](https://rufus.ie/) and run it with administrator privileges. Be sure to select DD write mode, otherwise the Kali installation process may fail.
+
+## Installing the system
+
+**WARNING:** The following actions will overwrite any data on the disk. Back up any important data before proceeding.
+
+In order to ensure speed and reliability during installation, a wired internet connection on the target system is recommended.
+
+For extra security, select "Separate /home, /usr, /var, and /tmp partitions" and "Guided- use entire disk and set up encrypted LVM" when prompted.
 
 ## Setting up the system
+
+After the installation completes and the system reboots, log into the root user and open a terminal.
 
 ### Ensuring everything is up-to-date
 
@@ -117,7 +127,7 @@ Use Rufus (download it [here](https://rufus.ie/)). Be sure to select DD write mo
 
 ### Configuring system settings
 
-#### Via script
+#### Via script ([source](https://github.com/Perdyx/fluffy-fiesta/blob/master/scripts/setup/kali.sh))
 
 `wget https://raw.githubusercontent.com/Perdyx/fluffy-fiesta/master/scripts/setup/kali.sh -O ~/setup.sh`
 
