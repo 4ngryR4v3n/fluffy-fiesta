@@ -14,6 +14,7 @@
 - Setting up the system
   - Creating a non-root user
   - Update
+- Troubleshooting
 - Additional resources
 
 ## Description
@@ -37,8 +38,6 @@ Download the latest Kali Linux build from [here](https://www.kali.org/downloads/
 Update and upgrade the system
 
 `apt-get update && apt-get upgrade`
-
-If this fails, /etc/apt/sources.list is probably empty. Copy the latest repositories from [here](https://docs.kali.org/general-use/kali-linux-sources-list-repositories).
 
 Install the necessary tools
 
@@ -122,14 +121,18 @@ Log out and log back in as the new user before proceeding.
 
 `sudo apt-get dist-upgrade`
 
-## Additional resources
+## Troubleshooting
 
-[02 - Building Custom Kali ISOs](https://docs.kali.org/kali-dojo/02-mastering-live-build)
+### Known issues
 
-[Advanced Package Management in Kali Linux](https://www.kali.org/tutorials/advanced-package-management-in-kali-linux/)
+After a fresh installation, /etc/apt/sources.list may be empty, causing apt to fail.  
+**Fix:** Copy the latest repositories from [here](https://docs.kali.org/general-use/kali-linux-sources-list-repositories).
 
-[Kali Linux sources.list Repositories](https://docs.kali.org/general-use/kali-linux-sources-list-repositories)
+### Additional resources
 
-[live-build(7)](https://manpages.debian.org/testing/live-build/live-build.7.en.html)
-
-[Live Build a Custom Kali ISO](https://docs.kali.org/development/live-build-a-custom-kali-iso)
+[Building Custom Kali ISOs](https://docs.kali.org/kali-dojo/02-mastering-live-build)  
+[Debian live-build](https://manpages.debian.org/testing/live-build/live-build.7.en.html)  
+[Kali Linux Official Documentation](https://www.kali.org/kali-linux-documentation/)  
+[Kali Linux sources.list Repositories](https://docs.kali.org/general-use/kali-linux-sources-list-repositories)  
+[Live Build a Custom Kali ISO](https://docs.kali.org/development/live-build-a-custom-kali-iso)  
+[Securing and Monitoring Kali](https://kali.training/lessons/7-securing-and-monitoring-kali/)
