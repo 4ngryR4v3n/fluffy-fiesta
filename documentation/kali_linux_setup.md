@@ -15,7 +15,8 @@
   - Creating a non-root user
   - Update
 - Troubleshooting
-- Additional resources
+  - Known issues
+  - Additional resources
 
 ## Description
 
@@ -49,15 +50,9 @@ Clone the Kali live-build repository
 
 ### Configuring the package list
 
-Replace live-build-config/kali-config/variant-gnome/package-lists/kali.list.chroot with that of your desired variant.
+Edit live-build-config/kali-config/variant-gnome/package-lists/kali.list.chroot as desired.
 
-#### Development ([source](https://github.com/Perdyx/fluffy-fiesta/blob/master/configs/kali/variants/development/live-build-config/kali-config/variant-gnome/package-lists/kali.list.chroot))
-
-`wget https://raw.githubusercontent.com/Perdyx/fluffy-fiesta/master/configs/kali/variants/development/live-build-config/kali-config/variant-gnome/package-lists/kali.list.chroot -O kali-config/variant-gnome/package-lists/kali.list.chroot`
-
-#### Pentesting ([source](https://github.com/Perdyx/fluffy-fiesta/blob/master/configs/kali/variants/pentesting/live-build-config/kali-config/variant-gnome/package-lists/kali.list.chroot))
-
-`wget https://raw.githubusercontent.com/Perdyx/fluffy-fiesta/master/configs/kali/variants/pentesting/live-build-config/kali-config/variant-gnome/package-lists/kali.list.chroot -O kali-config/variant-gnome/package-lists/kali.list.chroot`
+For more information, see [Kali Metapackages](https://tools.kali.org/kali-metapackages).
 
 ## Building the image
 
@@ -132,7 +127,9 @@ After a fresh installation, /etc/apt/sources.list may be empty, causing apt to f
 
 [Building Custom Kali ISOs](https://docs.kali.org/kali-dojo/02-mastering-live-build)  
 [Debian live-build](https://manpages.debian.org/testing/live-build/live-build.7.en.html)  
+[Kali Linux Metapackages](https://www.kali.org/news/kali-linux-metapackages/)  
 [Kali Linux Official Documentation](https://www.kali.org/kali-linux-documentation/)  
 [Kali Linux sources.list Repositories](https://docs.kali.org/general-use/kali-linux-sources-list-repositories)  
+[Kali Metapackages](https://tools.kali.org/kali-metapackages)  
 [Live Build a Custom Kali ISO](https://docs.kali.org/development/live-build-a-custom-kali-iso)  
 [Securing and Monitoring Kali](https://kali.training/lessons/7-securing-and-monitoring-kali/)
