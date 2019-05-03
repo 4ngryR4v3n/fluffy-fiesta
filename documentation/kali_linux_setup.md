@@ -97,7 +97,7 @@ Download [Rufus](https://rufus.ie/) and run it with administrator privileges. Be
 
 ## Installing the system
 
-**WARNING:** The following actions will overwrite any data on the disk. Back up any important data before proceeding.
+**WARNING:** The following process will erase any data on the disk. Back up any important data before proceeding.
 
 In order to ensure speed and reliability during installation, a wired internet connection on the target system is recommended.
 
@@ -105,11 +105,11 @@ For extra security, select "Separate /home, /usr, /var, and /tmp partitions" and
 
 ## Setting up the system
 
-After the installation completes and the system reboots, log into the root user and open a terminal.
+After the installation completes and the system reboots, log into the root user.
 
 ### Creating a non-root user
 
-Open gnome-control-center (this can be accessed either via typing "gnome-control-center" in a terminal, or by going to the status area on the right of the panel and selecting the settings icon). Navigate to Details/Users and click the "Add User..." button. Select "Administrator" under "Account Type" and fill in the rest before clicking "Add."
+Open gnome-control-center (this can be accessed either via typing "gnome-control-center" in a terminal, or by going to the status area on the right of the panel and selecting the settings icon). Navigate to Details/Users and click "Add User." Be sure to select "Administrator" under "Account Type" or the user will not have access to sudo.
 
 **NOTE:** It is best practice to set the user's password to something other than the root or disk encryption passwords.
 
