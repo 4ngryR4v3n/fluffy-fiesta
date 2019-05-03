@@ -10,10 +10,10 @@
   - Configuring ssh for host-guest communication
   - Transferring the image to the host machine via scp
 - Preparing installation media
+- Installing the system
 - Setting up the system
   - Creating a non-root user
-  - Ensuring everything is up-to-date
-  - Configuring dconf schemas
+  - Update
 - Additional resources
 
 ## Description
@@ -116,77 +116,11 @@ Open gnome-control-center (this can be accessed either via typing "gnome-control
 
 Log out and log back in as the new user before proceeding.
 
-### Ensuring everything is up-to-date
+### Update
 
 `sudo apt-get update && apt-get upgrade`
 
 `sudo apt-get dist-upgrade`
-
-### Configuring system settings
-
-#### Via script ([source](https://github.com/Perdyx/fluffy-fiesta/blob/master/scripts/setup/kali.sh))
-
-From the home directory, execute
-
-`wget https://raw.githubusercontent.com/Perdyx/fluffy-fiesta/master/scripts/setup/kali.sh -O ~/setup.sh`
-
-`chmod +x setup.sh`
-
-`sudo ./setup.sh`
-
-#### Manually
-
-Ensure dconf-editor is installed
-
-`sudo apt-get install dconf-editor`
-
-Change time display format
-
-`sudo gsettings set org.gnome.desktop.interface clock-format "12h"`
-
-`sudo gsettings set org.gnome.desktop.calendar show-weekdate "true"`
-
-Turn set up touchpad (only necessary for laptops)
-
-`sudo gsettings set org.gnome.peripherals.touchpad tap-to-click "true"`
-
-Set up extensions
-
-`sudo gnome-shell-extension-tool -e alternate-tab@gnome-shell-extensions.gcampax.github.com`
-
-`sudo gnome-shell-extension-tool -e caffeine@patapon.info`
-
-`sudo gnome-shell-extension-tool -d desktop-icons@csoriano`
-
-`sudo gnome-shell-extension-tool -e disconnect-wifi@kgshank.net`
-
-`sudo gnome-shell-extension-tool -d EasyScreenCast@iacopodeenosee.gmail.com`
-
-`sudo gnome-shell-extension-tool -e impatience@gfxmonk.net`
-
-`sudo gnome-shell-extension-tool -e drive-menu@gnome-shell-extensions.gcampax.github.com`
-
-Configure Dash to Dock
-
-`sudo gsettings set org.gnome.shell.extensions.dash-to-dock require-pressure-to-show "false"`
-
-`sudo gsettings set org.gnome.shell.extensions.dash-to-dock intellihide-mode "ALL_WINDOWS"`
-
-`sudo gsettings set org.gnome.shell.extensions.dash-to-dock animate-show-apps "false"`
-
-`sudo gsettings set org.gnome.shell.extensions.dash-to-dock click-action "minimize"`
-
-`sudo gsettings set org.gnome.shell.extensions.dash-to-dock scroll-action "switch-workspace"`
-
-`sudo gsettings set org.gnome.shell.extensions.dash-to-dock custom-theme-shrink "false"`
-
-`sudo gsettings set org.gnome.shell.extensions.dash-to-dock transparency-mode "FIXED"`
-
-`sudo gsettings set org.gnome.shell.extensions.dash-to-dock background-opacity "0"`
-
-## Further configuration
-
-Set up any custom dotfiles (terminator, vim, etc.). Check out [https://github.com/Perdyx/fluffy-fiesta/tree/master/configs](https://github.com/Perdyx/fluffy-fiesta/tree/master/configs).
 
 ## Additional resources
 
