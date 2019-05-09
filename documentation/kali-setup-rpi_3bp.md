@@ -1,4 +1,4 @@
-# Setting up Kali Linux on the Raspberry Pi 3 B+
+# Installing Kali Linux on the Raspberry Pi 3 B+ (arm64)
 
 ## Contents
 
