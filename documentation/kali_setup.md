@@ -1,4 +1,4 @@
-# Setting up Kali Linux
+# Installing Kali Linux on generic amd64 systems
 
 ## Contents
 
