@@ -7,7 +7,7 @@
 - Setting up the live-build system
   - Configuring the package list
 - Building the image
-  - Configuring ssh for host-guest communication
+  - Configuring SSH for host-guest communication
   - Transferring the image to the host machine via scp
 - Troubleshooting
   - Additional resources
@@ -50,7 +50,7 @@ For more information, see [Kali Metapackages](https://tools.kali.org/kali-metapa
 
 `./build.sh --verbose --distribution kali-rolling --variant gnome`
 
-### Configuring ssh for host-guest communication
+### Configuring SSH for host-guest communication
 
 Edit /etc/ssh/sshd_config to replace
 
@@ -60,15 +60,15 @@ with
 
 `PermitRootLogin yes.`
 
-Enable the ssh server to automatically launch on startup
+Enable the SSH server to automatically launch on startup
 
 `systemctl enable ssh`
 
-Restart the ssh server
+Restart the SSH server
 
 `service ssh restart`
 
-### Transferring the image to the host machine via scp
+### Transferring the image to the host machine via `scp`
 
 From the host machine, run
 
