@@ -24,7 +24,7 @@ This documentation outlines the steps necessary to build, install, and configure
 
 Configuration files for each variant can be found in [configs/kali/variants](https://github.com/Perdyx/fluffy-fiesta/tree/master/configs/kali/variants).
 
-**NOTE:** This guide is intended for personal use and may result in undesired functionality.
+**NOTE:** This documentation is intended for personal use and may result in undesired functionality.
 
 ## Requirements
 
