@@ -8,6 +8,7 @@
 - Configuring the system
   - Changing the password
   - Setting a hostname
+  - Configuring SSH
 
 ## Description
 
@@ -34,3 +35,9 @@ Type `passwd` then enter the new password twice.
 ### Setting a hostname
 
 `hostnamectl set-hostname HOSTNAME`
+
+### Configuring SSH
+
+`systemctl enable ssh`
+
+`systemctl start ssh`
