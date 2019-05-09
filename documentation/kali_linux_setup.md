@@ -1,4 +1,4 @@
-# Kali Linux Setup
+# Setting up Kali Linux
 
 ## Contents
 
