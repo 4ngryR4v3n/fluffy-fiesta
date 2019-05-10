@@ -8,8 +8,6 @@
 - Configuring the system
   - Changing the password
   - Setting a hostname
-  - Configuring SSH
-  - Setting up a "command and control" wifi connection
 
 ## Description
 
@@ -28,7 +26,7 @@ This documentation outlines the steps necessary to set up a functional Kali Linu
 
 ## Preparing the SD card
 
-Download the "Kali Linux RaspberryPi 3 64 bit" image from [here](https://www.offensive-security.com/kali-linux-arm-images/) and burn it to the SD card using [Etcher](https://www.balena.io/etcher/).
+Download the "Kali Linux RaspberryPi 3 64 bit" image from [here](https://whitedome.com.au/re4son/download/sticky-fingers-kali-pi/) and burn it to the SD card using [Etcher](https://www.balena.io/etcher/).
 
 Once the image has finished burning to the SD card, use any disk management tool to resize the primary partition to fill the rest of the unallocated space. Connect the HDMI cable to a monitor and attach a USB keyboard (necessary for initial setup). Insert the SD card into the Raspberry Pi and power it on.
 
@@ -45,11 +43,3 @@ Type `passwd` then enter the new password twice.
 ### Setting a hostname
 
 `hostnamectl set-hostname HOSTNAME`
-
-### Configuring SSH
-
-`systemctl enable ssh`
-
-`systemctl start ssh`
-
-### Setting up a "command and control" wifi connection
