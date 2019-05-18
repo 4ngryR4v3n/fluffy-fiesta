@@ -1,6 +1,8 @@
-# Bandit - bandit.labs.overthewire.org
+# Bandit
 
-## 0 - bandit0
+## bandit.labs.overthewire.org
+
+### 0 - bandit0
 
 `cat readme`
 
