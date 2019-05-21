@@ -2,15 +2,15 @@
 
 ## Contents
 
-- Description
-- Requirements
-- Setting up the live-build system
-  - Configuring the package list
-- Building the image
-  - Configuring SSH for host-guest communication
-  - Transferring the image to the host machine via scp
-- Troubleshooting
-  - Additional resources
+- [Description](#description)
+- [Requirements](#requirements)
+- [Setting up the live-build system](#setting-up-the-live-build-system)
+  - [Configuring the package list](#configuring-the-package-list)
+- [Building the image](#building-the-image)
+  - [Configuring SSH for host-guest communication](#configuring-ssh-for-host-guest-communication)
+  - [Transferring the image to the host machine via scp](#transferring-the-image-to-the-host-machine-via-scp)
+- [Troubleshooting](#troubleshooting)
+  - [Additional resources](#additional_resources)
 
 ## Description
 
