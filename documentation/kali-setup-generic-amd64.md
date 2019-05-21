@@ -9,6 +9,8 @@
 - Setting up the system
   - Creating a non-root user
   - Update
+  - Generate new SSH keys
+  - Installing Tor
 - Troubleshooting
   - Known issues
   - Additional resources
@@ -54,7 +56,7 @@ Log out and log back in as the new user before proceeding.
 
 `sudo apt-get dist-upgrade`
 
-### Reconfiguring SSH keys
+### Generate new SSH keys
 
 `cd /etc/ssh/`
 
