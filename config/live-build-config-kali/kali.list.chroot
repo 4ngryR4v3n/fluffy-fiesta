@@ -28,5 +28,6 @@ gnome-shell-extension-caffeine
 gnome-shell-extension-disconnect-wifi
 gnome-shell-extension-impatience
 htop
+net-tools
 terminator
 vim
