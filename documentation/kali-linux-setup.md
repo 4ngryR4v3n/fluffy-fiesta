@@ -2,18 +2,18 @@
 
 ## Contents
 
-- Description
-- Requirements
-- Preparing the installation media
-- Installing the system
-- Setting up the system
-  - Creating a non-root user
-  - Update
-  - Generate new SSH keys
-  - Installing Tor
-- Troubleshooting
+- [Description](#description)
+- [Requirements](#requirements)
+- [Preparing the installation media](#preparing-the-installation-media)
+- [Installing the system](#installing-the-system)
+- [Setting up the system](#setting-up-the-system)
+  - [Creating a non-root user](#creating-a-non-root-user)
+  - [Update](#update)
+  - [Generate new SSH keys](#generating-new-ssh-keys)
+  - [Installing Tor](#installing-tor)
+- [Troubleshooting](#troubleshooting)
   - [Known issues](#known-issues)
-  - Additional resources
+  - [Additional resources](#additional-resources)
 
 ## Description
 
