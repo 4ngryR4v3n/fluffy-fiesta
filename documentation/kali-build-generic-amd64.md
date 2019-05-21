@@ -42,7 +42,7 @@ Clone the Kali live-build repository
 
 ### Configuring the package list
 
-Edit live-build-config/kali-config/variant-gnome/package-lists/kali.list.chroot as desired.
+Edit live-build-config/kali-config/variant-gnome/package-lists/kali.list.chroot to include any desired packages.
 
 For more information, see [Kali Metapackages](https://tools.kali.org/kali-metapackages).
 
