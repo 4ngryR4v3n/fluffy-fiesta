@@ -12,7 +12,7 @@
   - Generate new SSH keys
   - Installing Tor
 - Troubleshooting
-  - Known issues
+  - [Known issues](#known-issues)
   - Additional resources
 
 ## Description
