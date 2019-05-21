@@ -68,8 +68,9 @@ Tor is included in the official Kali repositories, however it is not regularily 
 
 Add the source repository to /etc/apt/sources.list.
 
-`echo 'deb https://deb.torproject.org/torproject.org stretch main
-deb-src https://deb.torproject.org/torproject.org stretch main' > /etc/apt/sources.list.d/tor.list`
+`echo 'deb https://deb.torproject.org/torproject.org stretch main > /etc/apt/sources.list.d/tor.list`
+
+`deb-src https://deb.torproject.org/torproject.org stretch main' >> /etc/apt/sources.list.d/tor.list`
 
 Import the Tor project signing key to the apt keyring.
 
