@@ -54,6 +54,31 @@ Log out and log back in as the new user before proceeding.
 
 `sudo apt-get dist-upgrade`
 
+### Reconfiguring SSH keys
+
+`cd /etc/ssh/`
+
+`dpkg-reconfigure openssh-server`
+
+### Installing Tor
+
+Tor is included in the official Kali repositories, however it is not regularily updated. Tor should be downloaded from the [source](https://www.torproject.org/) to ensure it is fully up to date.
+
+Add the source repository to /etc/apt/sources.list.
+
+`echo 'deb https://deb.torproject.org/torproject.org stretch main
+deb-src https://deb.torproject.org/torproject.org stretch main' > /etc/apt/sources.list.d/tor.list`
+
+Import the Tor project signing key to the apt keyring.
+
+`wget -O- https://deb.torproject.org/torproject.org/A3C4F0F979CAA22CDBA8F512EE8CBC9E886DDD89.asc | sudo apt-key add -`
+
+Update and install Tor.
+
+`apt-get update`
+
+`apt-get install tor deb.torproject.org-keyring`
+
 ## Troubleshooting
 
 ### Known issues
@@ -66,3 +91,4 @@ After a fresh installation, /etc/apt/sources.list may be empty, causing apt to f
 [Kali Linux Official Documentation](https://www.kali.org/kali-linux-documentation/)  
 [Kali Linux sources.list Repositories](https://docs.kali.org/general-use/kali-linux-sources-list-repositories)  
 [Securing and Monitoring Kali](https://kali.training/lessons/7-securing-and-monitoring-kali/)
+[Top 10 Things to Do After Installing Kali Linux](https://null-byte.wonderhowto.com/how-to/top-10-things-do-after-installing-kali-linux-0186450/)
