@@ -26,7 +26,6 @@ kali-desktop-gnome
 git
 gnome-shell-extension-caffeine
 gnome-shell-extension-disconnect-wifi
-gnome-shell-extension-drive-menu
 gnome-shell-extension-impatience
 htop
 terminator
