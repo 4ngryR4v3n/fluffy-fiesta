@@ -1,4 +1,4 @@
-# Compiling a custom Kali Linux image for generic amd64 systems
+# Kali Linux Compilation for AMD64 Systems
 
 ## Contents
 
