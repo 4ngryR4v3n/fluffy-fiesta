@@ -4,7 +4,7 @@
 
 - Description
 - Requirements
-- Preparing installation media
+- Preparing the installation media
 - Installing the system
 - Setting up the system
   - Creating a non-root user
@@ -26,7 +26,7 @@ This documentation outlines the steps necessary to install and configure [Kali L
 - Reliable internet connection
 - Any Linux-compatible x64-based system with at least a 32 GB storage capacity
 
-## Preparing installation media
+## Preparing the installation media
 
 Download [Rufus](https://rufus.ie/) and run it with administrator privileges. Be sure to select DD write mode, otherwise the Kali installation process may fail.
 
