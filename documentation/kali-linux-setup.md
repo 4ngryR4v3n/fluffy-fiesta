@@ -1,4 +1,4 @@
-# Kali Linux Setup for AMD64 Systems
+# Kali Linux Setup
 
 ## Contents
 
