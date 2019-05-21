@@ -16,7 +16,7 @@ kali-desktop-live
 # kali-linux-forensic
 # kali-linux-voip
 # kali-linux-pwtools
-kali-linux-top10
+# kali-linux-top10
 # kali-linux-rfid
 
 # Graphical desktop
@@ -26,6 +26,7 @@ kali-desktop-gnome
 git
 gnome-shell-extension-caffeine
 gnome-shell-extension-disconnect-wifi
+gnome-shell-extension-drive-menu
 gnome-shell-extension-impatience
 htop
 terminator
