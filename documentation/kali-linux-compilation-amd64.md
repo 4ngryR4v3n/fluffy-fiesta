@@ -10,7 +10,7 @@
   - [Configuring SSH for host-guest communication](#configuring-ssh-for-host-guest-communication)
   - [Transferring the image to the host machine via scp](#transferring-the-image-to-the-host-machine-via-scp)
 - [Troubleshooting](#troubleshooting)
-  - [Additional resources](#additional_resources)
+  - [Additional resources](#additional-resources)
 
 ## Description
 
