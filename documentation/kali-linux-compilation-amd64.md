@@ -84,8 +84,8 @@ The ISO image should now be on the desktop. If an error appears stating that rem
 
 ### Known issues
 
-After a fresh installation, /etc/apt/sources.list may be empty, causing apt to fail.  
-**Fix:** Copy the latest repositories from [here](https://docs.kali.org/general-use/kali-linux-sources-list-repositories).
+- After a fresh installation, /etc/apt/sources.list may be empty, causing apt to fail.  
+  - **Fix:** Copy the latest repositories from [here](https://docs.kali.org/general-use/kali-linux-sources-list-repositories).
 
 ### Additional resources
 
