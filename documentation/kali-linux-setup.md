@@ -1,4 +1,4 @@
-# Installing Kali Linux on generic amd64 systems
+# Kali Linux Setup for AMD64 Systems
 
 ## Contents
 
