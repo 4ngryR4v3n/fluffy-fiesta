@@ -44,6 +44,8 @@ Clone the Kali live-build repository
 
 Edit live-build-config/kali-config/variant-gnome/package-lists/kali.list.chroot to include any desired packages.
 
+**NOTE:** Lines that start with a "#" are treated as comments and are ignored by the compiler.
+
 For more information, see [Kali Metapackages](https://tools.kali.org/kali-metapackages).
 
 ## Building the image
