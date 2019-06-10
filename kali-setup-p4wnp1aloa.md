@@ -1,4 +1,4 @@
-# Installing Kali Linux on the Raspberry Pi Zero W
+# Installing and configuring P4wnp1_aloa on the Raspberry Pi Zero W
 
 ## Contents
 
