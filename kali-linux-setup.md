@@ -10,7 +10,7 @@
   - [Creating a non-root user](#creating-a-non-root-user)
   - [Update](#update)
   - [Generate new SSH keys](#generating-new-ssh-keys)
-  - [Installing Tor](#installing-tor)
+  - [Installing Tor (optional)](#installing-tor)
 - [Troubleshooting](#troubleshooting)
   - [Known issues](#known-issues)
   - [Additional resources](#additional-resources)
@@ -62,7 +62,7 @@ Log out and log back in as the new user before proceeding.
 
 `dpkg-reconfigure openssh-server`
 
-### Installing Tor
+### Installing Tor (optional)
 
 Tor is included in the official Kali repositories, however it is not regularily updated. Tor should be downloaded from the [source](https://www.torproject.org/) to ensure it is fully up to date.
 

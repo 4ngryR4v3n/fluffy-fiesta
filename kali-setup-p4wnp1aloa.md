@@ -2,16 +2,17 @@
 
 ## Contents
 
-- Description
-- Requirements
-- Preparing the SD card
-- Resizing the primary partition
-- Configuring the system
-  - Changing the root password
-  - Setting a hostname
-- Configuring the ALOA (A Little Offensive Appliance)
-- Troubleshooting
-  - Additional resources
+- [Description](#description)
+- [Requirements](#requirements)
+- [Preparing the SD card](#preparing-the-sd-card)
+- [Resizing the primary partition](#resizing-the-primary-partition)
+- [Configuring the system](#configuring-the-system)
+  - [Changing the root password](#changing-the-root-password)
+  - [Setting a hostname](#setting-a-hostname)
+  - [Adjusting wireless antenna power (optional)](#adjusting-wireless-antenna-power-(optional))
+- [Configuring the ALOA (A Little Offensive Appliance)](#configuring-the-aloa-(a-little-offensive-appliance))
+- [Troubleshooting](#troubleshooting)
+  - [Additional resources](#additional-resources)
 
 ## Description
 
@@ -50,6 +51,8 @@ Type `passwd` then enter the new password twice.
 ### Setting a hostname
 
 `hostnamectl set-hostname HOSTNAME`
+
+### Adjusting wireless antenna power (optional)
 
 ## Configuring the ALOA (A Little Offensive Appliance)
 
