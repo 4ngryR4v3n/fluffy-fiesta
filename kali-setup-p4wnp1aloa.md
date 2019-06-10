@@ -9,7 +9,6 @@
 - [Configuring the system](#configuring-the-system)
   - [Changing the root password](#changing-the-root-password)
   - [Setting a hostname](#setting-a-hostname)
-  - [Adjusting wireless antenna power (optional)](#adjusting-wireless-antenna-power-optional)
 - [Configuring the ALOA (A Little Offensive Appliance)](#configuring-the-aloa-a-little-offensive-appliance)
 - [Troubleshooting](#troubleshooting)
   - [Additional resources](#additional-resources)
@@ -52,9 +51,19 @@ Type `passwd` then enter the new password twice.
 
 `hostnamectl set-hostname HOSTNAME`
 
-### Adjusting wireless antenna power (optional)
-
 ## Configuring the ALOA (A Little Offensive Appliance)
+
+USB settings
+
+WiFi settings
+
+Bluetooth
+
+Network settings
+
+HIDScript
+
+Save and backup
 
 ## Troubleshooting
 
