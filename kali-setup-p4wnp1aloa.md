@@ -9,8 +9,8 @@
 - [Configuring the system](#configuring-the-system)
   - [Changing the root password](#changing-the-root-password)
   - [Setting a hostname](#setting-a-hostname)
-  - [Adjusting wireless antenna power (optional)](#adjusting-wireless-antenna-power-(optional))
-- [Configuring the ALOA (A Little Offensive Appliance)](#configuring-the-aloa-(a-little-offensive-appliance))
+  - [Adjusting wireless antenna power (optional)](#adjusting-wireless-antenna-power-optional)
+- [Configuring the ALOA (A Little Offensive Appliance)](#configuring-the-aloa-a-little-offensive-appliance)
 - [Troubleshooting](#troubleshooting)
   - [Additional resources](#additional-resources)
 
