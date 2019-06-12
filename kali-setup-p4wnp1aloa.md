@@ -39,6 +39,10 @@ SSH into the Pi at 172.24.0.1 on port 22. The default login uses the root accoun
 
 ## Resizing the primary partition
 
+**NOTE:** It is normal to have up to 1 GB of unallocated space or "wiggle room" after the primary partition. If this is the case, there is no need to expand the primary partition.
+
+If necessary, resize the primary partition to the full size of the SD card.
+
 `./scripts/rpi-wiggle.sh`
 
 ## Configuring the system
@@ -53,17 +57,9 @@ Type `passwd` then enter the new password twice.
 
 ## Configuring the ALOA (A Little Offensive Appliance)
 
-USB settings
+To configure P4wnp1, open a browser and go to http://172.16.0.1:8000.
 
-WiFi settings
-
-Bluetooth
-
-Network settings
-
-HIDScript
-
-Save and backup
+After connecting to P4wnp1 to the internet, it is reccommended to run `apt update && apt upgrade` to ensure the entire system is up to date.
 
 ## Troubleshooting
 
