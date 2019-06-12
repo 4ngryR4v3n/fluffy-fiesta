@@ -9,6 +9,7 @@
 - [Configuring the system](#configuring-the-system)
   - [Changing the root password](#changing-the-root-password)
   - [Setting a hostname](#setting-a-hostname)
+  - [Using private/public keys for SSH authentication](#using-private-public-keys-for-authentication)
 - [Configuring the ALOA (A Little Offensive Appliance)](#configuring-the-aloa-a-little-offensive-appliance)
 - [Troubleshooting](#troubleshooting)
   - [Additional resources](#additional-resources)
@@ -35,7 +36,9 @@ Once the image has finished burning to the SD card, insert the SD card into the 
 
 Next, plug a micro USB OTG cable from the PC to the Pi's data port and connect to the Pi's wireless access point when it becomes available (password: "MaMe82-P4wnP1").
 
-SSH into the Pi at 172.24.0.1 on port 22. The default login uses the root account with "toor" as the password.
+SSH into the Pi at 172.24.0.1 on port 22. The default login uses the root account with "toor" as the password. If an error appears stating that remote host identification has failed, run
+
+`ssh-keygen -R GUEST_IP`
 
 ## Resizing the primary partition
 
@@ -55,11 +58,15 @@ Type `passwd` then enter the new password twice.
 
 `hostnamectl set-hostname HOSTNAME`
 
+### Setting up [Mosh](https://mosh.org/)
+
+### Using private/public keys for SSH authentication
+
 ## Configuring the ALOA (A Little Offensive Appliance)
 
 To configure P4wnp1, open a browser and go to http://172.16.0.1:8000.
 
-After connecting to P4wnp1 to the internet, it is reccommended to run `apt update && apt upgrade` to ensure the entire system is up to date.
+It is reccommended to connect the P4wnP1 to the internet and run `apt update && apt upgrade` to ensure the entire system is up to date.
 
 ## Troubleshooting
 
