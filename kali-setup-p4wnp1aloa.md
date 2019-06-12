@@ -9,7 +9,8 @@
 - [Configuring the system](#configuring-the-system)
   - [Changing the root password](#changing-the-root-password)
   - [Setting a hostname](#setting-a-hostname)
-  - [Using private/public keys for SSH authentication](#using-private-public-keys-for-authentication)
+  - [Setting up Mosh](#setting-up-mosh)
+  - [Using private/public keys for SSH authentication](#using-privatepublic-keys-for-authentication)
 - [Configuring the ALOA (A Little Offensive Appliance)](#configuring-the-aloa-a-little-offensive-appliance)
 - [Troubleshooting](#troubleshooting)
   - [Additional resources](#additional-resources)
@@ -59,6 +60,8 @@ Type `passwd` then enter the new password twice.
 `hostnamectl set-hostname HOSTNAME`
 
 ### Setting up [Mosh](https://mosh.org/)
+
+`apt install mosh`
 
 ### Using private/public keys for SSH authentication
 
