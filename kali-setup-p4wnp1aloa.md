@@ -63,8 +63,6 @@ Type `passwd` then enter the new password twice.
 
 `apt install mosh`
 
-### Using private/public keys for SSH authentication
-
 ## Configuring the ALOA (A Little Offensive Appliance)
 
 To configure P4wnp1, open a browser and go to http://172.16.0.1:8000.
