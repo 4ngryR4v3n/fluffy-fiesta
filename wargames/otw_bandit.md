@@ -1,6 +1,6 @@
 # Bandit
 
-## bandit.labs.overthewire.org
+## bandit.labs.overthewire.org:2220
 
 0 - bandit0
 1 - boJ9jbbUNNfktd78OOpsqOltutMc3MY1
