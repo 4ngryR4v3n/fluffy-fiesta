@@ -91,7 +91,7 @@ After a fresh installation, /etc/apt/sources.list may be empty, causing apt to f
 
 ### Additional resources
 
-[Kali Linux Official Documentation](https://www.kali.org/kali-linux-documentation/)  
-[Kali Linux sources.list Repositories](https://docs.kali.org/general-use/kali-linux-sources-list-repositories)  
-[Securing and Monitoring Kali](https://kali.training/lessons/7-securing-and-monitoring-kali/)
+[Kali Linux Official Documentation](https://www.kali.org/kali-linux-documentation/)<br>
+[Kali Linux sources.list Repositories](https://docs.kali.org/general-use/kali-linux-sources-list-repositories)<br>
+[Securing and Monitoring Kali](https://kali.training/lessons/7-securing-and-monitoring-kali/)<br>
 [Top 10 Things to Do After Installing Kali Linux](https://null-byte.wonderhowto.com/how-to/top-10-things-do-after-installing-kali-linux-0186450/)
