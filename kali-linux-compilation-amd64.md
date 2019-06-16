@@ -89,9 +89,9 @@ The ISO image should now be on the desktop. If an error appears stating that rem
 
 ### Additional resources
 
-[Building Custom Kali ISOs](https://docs.kali.org/kali-dojo/02-mastering-live-build)  
-[Debian live-build](https://manpages.debian.org/testing/live-build/live-build.7.en.html)  
-[Kali Linux Metapackages](https://www.kali.org/news/kali-linux-metapackages/)  
-[Kali Linux Official Documentation](https://www.kali.org/kali-linux-documentation/)  
-[Kali Metapackages](https://tools.kali.org/kali-metapackages)  
+[Building Custom Kali ISOs](https://docs.kali.org/kali-dojo/02-mastering-live-build)<br>
+[Debian live-build](https://manpages.debian.org/testing/live-build/live-build.7.en.html)<br>
+[Kali Linux Metapackages](https://www.kali.org/news/kali-linux-metapackages/)<br>
+[Kali Linux Official Documentation](https://www.kali.org/kali-linux-documentation/)<br>
+[Kali Metapackages](https://tools.kali.org/kali-metapackages)<br>
 [Live Build a Custom Kali ISO](https://docs.kali.org/development/live-build-a-custom-kali-iso)
