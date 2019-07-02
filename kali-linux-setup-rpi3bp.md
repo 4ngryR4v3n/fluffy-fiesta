@@ -12,6 +12,7 @@
   - [Configuring SSH](#configuring-ssh)
   - [Setting up Mosh](#setting-up-mosh)
 - [Setting up an access point)](#setting-up-an-access-point)
+- [Connecting to a network](#connecting-to-a-network)
 - [Troubleshooting](#troubleshooting)
   - [Additional resources](#additional-resources)
 
@@ -134,7 +135,7 @@ Restart the dhcpcd service and apply the changes to wlan0.
 
 ### Configuring [hostapd](https://en.wikipedia.org/wiki/Hostapd)
 
-Replace the contents of /etc/hostapd/hostapd.conf with
+Create a new /etc/hostapd/hostapd.conf with the following contents
 
 ```
 sudo nano /etc/hostapd/hostapd.conf
