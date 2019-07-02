@@ -13,11 +13,7 @@ sudo nano /etc/network/interfaces
 
   auto eth0
   allow-hotplug eth0
-  iface eth0 inet static
-  address 192.168.1.2
-  netmask 255.255.255.0
-  gateway 192.168.1.1
-  dns-nameservers 8.8.8.8 8.8.4.4
+  iface eth0 inet dhcp
 
   allow-hotplug wlan0
   iface wlan0 inet static
@@ -25,7 +21,10 @@ sudo nano /etc/network/interfaces
   netmask 255.255.255.0
   network 192.168.220.0
   broadcast 192.168.220.255
-  # wpa-conf /etc/wpa_supplicant/wpa_supplicant.conf
+  
+  allow-hotplug wlan1
+  iface wlan1 inet dhcp
+  wpa-conf /etc/wpa_supplicant/wpa_supplicant.conf
 sudo service dhcpcd restart
 sudo ifdown wlan0
 sudo ifup wlan0
@@ -67,6 +66,9 @@ sudo sh -c "echo 1 > /proc/sys/net/ipv4/ip_forward"
 sudo iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
 sudo iptables -A FORWARD -i eth0 -o wlan0 -m state --state RELATED,ESTABLISHED -j ACCEPT
 sudo iptables -A FORWARD -i wlan0 -o eth0 -j ACCEPT
+sudo iptables -t nat -A POSTROUTING -o wlan1 -j MASQUERADE
+sudo iptables -A FORWARD -i wlan1 -o wlan0 -m state --state RELATED,ESTABLISHED -j ACCEPT
+sudo iptables -A FORWARD -i wlan0 -o wlan1 -j ACCEPT
 sudo apt-get install iptables-persistent
 sudo systemctl enable netfilter-persistent
 sudo service hostapd start
