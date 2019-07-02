@@ -167,8 +167,9 @@ channel=6
 ieee80211n=1
 wmm_enabled=1
 ht_capab=[HT40][SHORT-GI-20][DSSS_CCK-40]
-macaddr_acl=0
-ignore_broadcast_ssid=0
+macaddr_acl=1
+accept_mac_file=/etc/hostapd/wlist
+ignore_broadcast_ssid=1
 
 auth_algs=1
 wpa=2
@@ -178,6 +179,10 @@ rsn_pairwise=CCMP
 ssid=Pi3-AP
 wpa_passphrase=raspberry
 ```
+
+Create a new file in /etc/hostapd called 'wlist' with the contents being the MAC addresses of any whitelisted devices.
+
+**NOTE:** The above configuration disables SSID broadcast and enables MAC filtering.
 
 Edit /etc/default/hostapd and change the value of 'DAEMON_CONF' to '/etc/hostapd/hostapd.conf.' Do the same in /etc/init.d/hostapd.
 
