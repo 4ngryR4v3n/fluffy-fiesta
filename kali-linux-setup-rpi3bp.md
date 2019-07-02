@@ -159,7 +159,6 @@ Restart the dhcpcd service and apply the changes to wlan0.
 Create a new /etc/hostapd/hostapd.conf with the following contents
 
 ```
-sudo nano /etc/hostapd/hostapd.conf
 interface=wlan0
 driver=nl80211
 
