@@ -14,17 +14,18 @@ sudo nano /etc/network/interfaces
   auto eth0
   allow-hotplug eth0
   iface eth0 inet dhcp
-
+  
   allow-hotplug wlan0
+  iface wlan1 inet dhcp
+  wpa-conf /etc/wpa_supplicant/wpa_supplicant.conf
+
+  allow-hotplug wlan1
   iface wlan0 inet static
   address 192.168.220.1
   netmask 255.255.255.0
   network 192.168.220.0
   broadcast 192.168.220.255
   
-  allow-hotplug wlan1
-  iface wlan1 inet dhcp
-  wpa-conf /etc/wpa_supplicant/wpa_supplicant.conf
 sudo service dhcpcd restart
 sudo ifdown wlan0
 sudo ifup wlan0
