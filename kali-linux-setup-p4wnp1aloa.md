@@ -10,7 +10,6 @@
   - [Changing the root password](#changing-the-root-password)
   - [Setting a hostname](#setting-a-hostname)
   - [Setting up Mosh](#setting-up-mosh)
-  - [Using private/public keys for SSH authentication](#using-privatepublic-keys-for-authentication)
 - [Configuring the ALOA (A Little Offensive Appliance)](#configuring-the-aloa-a-little-offensive-appliance)
 - [Troubleshooting](#troubleshooting)
   - [Additional resources](#additional-resources)
