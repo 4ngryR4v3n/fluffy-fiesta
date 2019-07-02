@@ -73,4 +73,5 @@ It is reccommended to connect the P4wnP1 to the internet and run `apt update && 
 
 ### Additional resources
 
+[Mosh](https://mosh.org/)
 [P4wnp1_aloa](https://github.com/mame82/P4wnP1_aloa)
