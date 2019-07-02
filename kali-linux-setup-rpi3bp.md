@@ -12,6 +12,12 @@
   - [Configuring SSH](#configuring-ssh)
   - [Setting up Mosh](#setting-up-mosh)
 - [Setting up an access point)](#setting-up-an-access-point)
+  - [Updating the system and installing hostapd and dnsmasq](#updating-the-system-and-installing-hostapd-and-dnsmasq)
+  - [Configuring the interfaces](#configuring-the-interfaces)
+  - [Configuring hostapd](#configuring-hostapd)
+  - [Configuring dnsmasq](#configuring-dnsmasq)
+  - [Setting up IPv4 forwarding](#setting-up-ipv4-forwarding)
+  - [Enabling services to run at boot](#enabling-services-to-run-at-boot)
 - [Connecting to a network](#connecting-to-a-network)
 - [Troubleshooting](#troubleshooting)
   - [Additional resources](#additional-resources)
@@ -102,15 +108,15 @@ allow-hotplug eth0
 iface eth0 inet dhcp
 
 allow-hotplug wlan0
-iface wlan1 inet dhcp
-wpa-conf /etc/wpa_supplicant/wpa_supplicant.conf
+iface wlan0 inet static
+address 192.168.100.1
+netmask 255.255.255.0
+network 192.168.100.0
+broadcast 192.168.100.255
 
 allow-hotplug wlan1
-iface wlan0 inet static
-address 192.168.220.1
-netmask 255.255.255.0
-network 192.168.220.0
-broadcast 192.168.220.255
+iface wlan1 inet dhcp
+wpa-conf /etc/wpa_supplicant/wpa_supplicant.conf
 ```
 
 **NOTE:** If, after a reboot, any external wireless interfaces is acting as wlan0, try switching the 'wlan0' and 'wlan1' on the lines with 'allow-hotplug.'
@@ -171,12 +177,12 @@ Replace the contents of /etc/dnsmasq.conf with
 
 ```
 interface=wlan0
-listen-address=192.168.220.1
+listen-address=192.168.100.1
 bind-interfaces
 server=8.8.8.8
 domain-needed
 bogus-priv
-dhcp-range=192.168.220.50,192.168.220.150,12h
+dhcp-range=192.168.100.50,192.168.100.150,12h
 ```
 ### Setting up IPv4 forwarding
 
