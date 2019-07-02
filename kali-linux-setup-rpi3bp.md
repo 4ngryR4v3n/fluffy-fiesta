@@ -196,7 +196,7 @@ bind-interfaces
 server=8.8.8.8
 domain-needed
 bogus-priv
-dhcp-range=192.168.100.50,192.168.100.150,12h
+dhcp-range=192.168.100.2,192.168.100.100,12h
 ```
 ### Setting up IPv4 forwarding
 
