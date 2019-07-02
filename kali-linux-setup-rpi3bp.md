@@ -10,6 +10,7 @@
   - [Changing the root password](#changing-the-root-password)
   - [Setting a hostname](#setting-a-hostname)
   - [Configuring SSH](#configuring-ssh)
+  - [Changing host SSH keys](#changing-host-ssh-keys)
   - [Setting up Mosh](#setting-up-mosh)
   - [Disabling the GUI](#disabling-the-gui)
 - [Setting up an access point)](#setting-up-an-access-point)
@@ -69,6 +70,14 @@ SSH should be enabled by default. To connect, use the default username "root" an
 If an error appears on the client stating that remote host identification has failed, run
 
 `ssh-keygen -R GUEST_IP`
+
+### Changing host SSH keys
+
+`rm /etc/ssh/ssh_host_*`
+
+`dpkg-reconfigure openssh-server`
+
+`service ssh restart`
 
 ### Setting up [Mosh](https://mosh.org/)
 
