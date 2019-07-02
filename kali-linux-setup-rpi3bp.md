@@ -11,7 +11,6 @@
   - [Setting a hostname](#setting-a-hostname)
   - [Configuring SSH](#configuring-ssh)
   - [Setting up Mosh](#setting-up-mosh)
-  - [Using private/public keys for SSH authentication](#using-privatepublic-keys-for-authentication)
 - [Setting up an access point)](#setting-up-an-access-point)
 - [Troubleshooting](#troubleshooting)
   - [Additional resources](#additional-resources)
@@ -221,6 +220,16 @@ Make the changes persistent across reboots.
 Reboot to ensure everything has been set up correctly.
 
 `sudo reboot`
+
+## Connecting to a network
+
+To connect to a network, simply use an ethernet cable, or add the following to /etc/wpa_suplicant/wpa_supplicant.conf.
+
+```
+network={
+  ssid="SSID"
+  psk="PASSWORD"
+```
 
 ## Troubleshooting
 
