@@ -11,6 +11,7 @@
   - [Setting a hostname](#setting-a-hostname)
   - [Configuring SSH](#configuring-ssh)
   - [Setting up Mosh](#setting-up-mosh)
+  - [Disabling the GUI](#disabling-the-gui)
 - [Setting up an access point)](#setting-up-an-access-point)
   - [Updating the system and installing hostapd and dnsmasq](#updating-the-system-and-installing-hostapd-and-dnsmasq)
   - [Configuring the interfaces](#configuring-the-interfaces)
@@ -72,6 +73,20 @@ If an error appears on the client stating that remote host identification has fa
 ### Setting up [Mosh](https://mosh.org/)
 
 `apt install mosh`
+
+### Disabling the GUI
+
+Boot into a command line instead of XFCE
+
+`systemctl set-default multi-user.target`
+
+To revert to default, use
+
+`systemctl set-default graphical.target`
+
+Apply the changes
+
+`reboot`
 
 ## Setting up an access point
 
