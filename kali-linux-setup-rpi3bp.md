@@ -1,4 +1,4 @@
-sudo apt-get update
+`sudo apt-get update
 sudo apt-get upgrade
 sudo reboot
 sudo apt-get install hostapd
@@ -70,4 +70,4 @@ sudo apt-get install iptables-persistent
 sudo systemctl enable netfilter-persistent
 sudo service hostapd start
 sudo service dnsmasq start
-sudo reboot
+sudo reboot`
