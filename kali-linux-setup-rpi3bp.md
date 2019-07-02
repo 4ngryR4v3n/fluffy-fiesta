@@ -211,6 +211,10 @@ Apply the changes.
 
 Configure [iptables](https://wiki.debian.org/iptables).
 
+`update-alternatives --config iptables`
+
+**NOTE:** Be sure to select legacy mode.
+
 `iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE`
 
 `iptables -A FORWARD -i eth0 -o wlan0 -m state --state RELATED,ESTABLISHED -j ACCEPT`
