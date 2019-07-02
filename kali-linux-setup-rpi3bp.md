@@ -1,13 +1,13 @@
-  sudo apt-get update
-  sudo apt-get upgrade
-  sudo reboot
-  sudo apt-get install hostapd
-  sudo apt-get install dnsmasq
-  sudo apt-get install dhcpcd5
-  sudo nano /etc/dhcpcd.conf
+```
+sudo apt-get update
+sudo apt-get upgrade
+sudo reboot
+sudo apt-get install hostapd
+sudo apt-get install dnsmasq
+sudo apt-get install dhcpcd5
+sudo nano /etc/dhcpcd.conf
   denyinterfaces wlan0
-  sudo nano /etc/network/interfaces
-
+sudo nano /etc/network/interfaces
   auto lo
   iface lo inet loopback
 
@@ -26,12 +26,10 @@
   network 192.168.220.0
   broadcast 192.168.220.255
   # wpa-conf /etc/wpa_supplicant/wpa_supplicant.conf
-
-  sudo service dhcpcd restart
-  sudo ifdown wlan0
-  sudo ifup wlan0
-  sudo nano /etc/hostapd/hostapd.conf
-
+sudo service dhcpcd restart
+sudo ifdown wlan0
+sudo ifup wlan0
+sudo nano /etc/hostapd/hostapd.conf
   interface=wlan0
   driver=nl80211
 
@@ -50,18 +48,12 @@
 
   ssid=Pi3-AP
   wpa_passphrase=raspberry
-
-  sudo nano /etc/default/hostapd
-
+sudo nano /etc/default/hostapd
   DAEMON_CONF="/etc/hostapd/hostapd.conf"
-
-  sudo nano /etc/init.d/hostapd
-
+sudo nano /etc/init.d/hostapd
   DAEMON_CONF=/etc/hostapd/hostapd.conf
-
-  sudo mv /etc/dnsmasq.conf /etc/dnsmasq.conf.orig
-  sudo nano /etc/dnsmasq.conf
-
+sudo mv /etc/dnsmasq.conf /etc/dnsmasq.conf.orig
+sudo nano /etc/dnsmasq.conf
   interface=wlan0
   listen-address=192.168.220.1
   bind-interfaces
@@ -69,17 +61,15 @@
   domain-needed
   bogus-priv
   dhcp-range=192.168.220.50,192.168.220.150,12h
-
-  sudo nano /etc/sysctl.conf
-
+sudo nano /etc/sysctl.conf
   net.ipv4.ip_forward=1
-
-  sudo sh -c "echo 1 > /proc/sys/net/ipv4/ip_forward"
-  sudo iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
-  sudo iptables -A FORWARD -i eth0 -o wlan0 -m state --state RELATED,ESTABLISHED -j ACCEPT
-  sudo iptables -A FORWARD -i wlan0 -o eth0 -j ACCEPT
-  sudo apt-get install iptables-persistent
-  sudo systemctl enable netfilter-persistent
-  sudo service hostapd start
-  sudo service dnsmasq start
-  sudo reboot
+sudo sh -c "echo 1 > /proc/sys/net/ipv4/ip_forward"
+sudo iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
+sudo iptables -A FORWARD -i eth0 -o wlan0 -m state --state RELATED,ESTABLISHED -j ACCEPT
+sudo iptables -A FORWARD -i wlan0 -o eth0 -j ACCEPT
+sudo apt-get install iptables-persistent
+sudo systemctl enable netfilter-persistent
+sudo service hostapd start
+sudo service dnsmasq start
+sudo reboot
+```
