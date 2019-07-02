@@ -7,6 +7,7 @@
 To start, log in as root and ensure the system is up to date.
 
 `sudo apt-get update`
+
 `sudo apt-get upgrade`
 
 Install [hostapd](https://en.wikipedia.org/wiki/Hostapd) and [dnsmasq](https://en.wikipedia.org/wiki/Dnsmasq) and update dhcpcd to the latest version.
@@ -60,7 +61,9 @@ dns-nameservers 1.1.1.1 1.0.0.1
 Restart the dhcpcd service and apply the changes to wlan0.
 
 `service dhcpcd restart`
+
 `ifdown wlan0`
+
 `ifup wlan0`
 
 ### Configuring [hostapd](https://en.wikipedia.org/wiki/Hostapd)
@@ -135,11 +138,13 @@ Configure [iptables](https://wiki.debian.org/iptables).
 Make the changes persistent across reboots.
 
 `apt-get install iptables-persistent`
+
 `systemctl enable netfilter-persistent`
 
 ### Enabling services to run at boot
 
 `systemctl enable hostapd`
+
 `systemctl enable dnsmasq`
 
 **NOTE:** If an error occurs regarding masked services, run
