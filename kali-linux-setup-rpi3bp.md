@@ -1,5 +1,72 @@
 # Setting up Kali Linux on the Raspberry Pi 3 B+
 
+## Contents
+
+- [Description](#description)
+- [Requirements](#requirements)
+- [Preparing the SD card](#preparing-the-sd-card)
+- [Resizing the primary partition](#resizing-the-primary-partition)
+- [Configuring the system](#configuring-the-system)
+  - [Changing the root password](#changing-the-root-password)
+  - [Setting a hostname](#setting-a-hostname)
+  - [Configuring SSH](#configuring-ssh)
+  - [Setting up Mosh](#setting-up-mosh)
+  - [Using private/public keys for SSH authentication](#using-privatepublic-keys-for-authentication)
+- [Setting up an access point)](#setting-up-an-access-point)
+- [Troubleshooting](#troubleshooting)
+  - [Additional resources](#additional-resources)
+
+## Description
+
+This documentation outlines the steps necessary to set up [Kali Linux](https://www.kali.org/) on the Raspberry Pi 3 B+ platform.
+
+**NOTE:** This documentation is intended for personal use and may result in undesired functionality.
+
+## Requirements
+
+- A computer with internet access
+- Raspberry Pi 3 B+
+- 16 GB or larger SD card (with usb reader)
+- An ethernet cable (for a wired connection to the Pi)
+
+## Preparing the SD card
+
+Download the "Kali Linux RaspberryPi 2 and 3 64" installation image from the [releases](https://www.offensive-security.com/kali-linux-arm-images/) page and burn it to the SD card using [Etcher](https://www.balena.io/etcher/) (extraction of the .xz file is not necessary).
+
+Once the image has finished burning to the SD card, insert the SD card into the Raspberry Pi.
+
+**WARNING:** Do not attempt to insert the SD card while the device is powered, as it may corrupt the installation.
+
+## Resizing the primary partition
+
+**NOTE:** It is normal to have up to 1 GB of unallocated space or "wiggle room" after the primary partition. If this is the case, there is no need to expand the primary partition.
+
+If necessary, resize the primary partition to the full size of the SD card.
+
+`./scripts/rpi-wiggle.sh`
+
+## Configuring the system
+
+### Changing the root password
+
+Type `passwd` then enter the new password twice.
+
+### Setting a hostname
+
+`hostnamectl set-hostname HOSTNAME`
+
+### Configuring SSH
+
+SSH should be enabled by default. To connect, use the default username "root" and password "toor" on port 22.
+
+If an error appears on the client stating that remote host identification has failed, run
+
+`ssh-keygen -R GUEST_IP`
+
+### Setting up [Mosh](https://mosh.org/)
+
+`apt install mosh`
+
 ## Setting up an access point
 
 ### Updating the system and installing [hostapd](https://en.wikipedia.org/wiki/Hostapd) and [dnsmasq](https://en.wikipedia.org/wiki/Dnsmasq)
@@ -154,3 +221,12 @@ Make the changes persistent across reboots.
 Reboot to ensure everything has been set up correctly.
 
 `sudo reboot`
+
+## Troubleshooting
+
+### Additional resources
+
+[dnsmasq](https://en.wikipedia.org/wiki/Dnsmasq)  
+[hostapd](https://en.wikipedia.org/wiki/Hostapd)  
+[Kali Linux - Raspberry Pi](https://docs.kali.org/kali-on-arm/install-kali-linux-arm-raspberry-pi)  
+[Mosh](https://mosh.org/)
