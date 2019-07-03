@@ -143,7 +143,7 @@ iface wlan1 inet dhcp
 wpa-conf /etc/wpa_supplicant/wpa_supplicant.conf
 ```
 
-**NOTE:** If, after a reboot, any external wireless interfaces is acting as wlan0, try switching the 'wlan0' and 'wlan1' on the lines with 'allow-hotplug.'
+**NOTE:** If, after a reboot, any external wireless interface is acting as wlan0, try switching the 'wlan0' and 'wlan1' on the lines with 'allow-hotplug.'
 
 If a static IP address is necessary on any interface, replace the line(s) containing 'iface' with
 
