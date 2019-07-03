@@ -268,6 +268,7 @@ To connect to a network, simply use an ethernet cable, or add the following to /
 network={
   ssid="SSID"
   psk="PASSWORD"
+}
 ```
 
 ## Troubleshooting
