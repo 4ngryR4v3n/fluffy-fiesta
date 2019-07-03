@@ -159,8 +159,6 @@ Restart the dhcpcd service and apply the changes to wlan0.
 
 `service dhcpcd restart`
 
-`ifdown wlan0`
-
 `ifup wlan0`
 
 ### Configuring [hostapd](https://en.wikipedia.org/wiki/Hostapd)
