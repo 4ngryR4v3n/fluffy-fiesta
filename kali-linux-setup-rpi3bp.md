@@ -242,6 +242,8 @@ Make the changes persistent across reboots.
 
 `apt-get install iptables-persistent`
 
+**NOTE:** Be sure to select yes to save IP rules.
+
 `systemctl enable netfilter-persistent`
 
 ### Enabling services to run at boot
