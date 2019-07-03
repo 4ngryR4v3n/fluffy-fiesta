@@ -1,4 +1,4 @@
-# Setting up Kali Linux on the Raspberry Pi 3 B+
+# Setting up Kali Linux on the Raspberry Pi Zero W
 
 ## Contents
 
@@ -12,7 +12,6 @@
   - [Configuring SSH](#configuring-ssh)
   - [Changing host SSH keys](#changing-host-ssh-keys)
   - [Setting up Mosh](#setting-up-mosh)
-  - [Disabling the GUI](#disabling-the-gui)
 - [Setting up an access point)](#setting-up-an-access-point)
   - [Updating the system and installing hostapd and dnsmasq](#updating-the-system-and-installing-hostapd-and-dnsmasq)
   - [Configuring the interfaces](#configuring-the-interfaces)
@@ -20,28 +19,35 @@
   - [Configuring dnsmasq](#configuring-dnsmasq)
   - [Setting up IPv4 forwarding](#setting-up-ipv4-forwarding)
   - [Enabling services to run at boot](#enabling-services-to-run-at-boot)
-- [Connecting to a network](#connecting-to-a-network)
 - [Troubleshooting](#troubleshooting)
   - [Additional resources](#additional-resources)
 
 ## Description
 
-This documentation outlines the steps necessary to set up [Kali Linux](https://www.kali.org/) on the Raspberry Pi 3 B+ platform.
+This documentation outlines the steps necessary to set up [Kali Linux](https://www.kali.org/) on the Raspberry Pi Zero W platform.
 
 **NOTE:** This documentation is intended for personal use and may result in undesired functionality.
 
 ## Requirements
 
 - A computer with internet access
-- Raspberry Pi 3 B+
+- Raspberry Pi Zero w
 - 16 GB or larger SD card (with usb reader)
-- An ethernet cable (for a wired connection to the Pi)
 
 ## Preparing the SD card
 
-Download the "Kali Linux RaspberryPi 2 and 3 64" installation image from the [releases](https://www.offensive-security.com/kali-linux-arm-images/) page and burn it to the SD card using [Etcher](https://www.balena.io/etcher/) (extraction of the .xz file is not necessary).
+Download the "Kali Linux RPi0w Nexmon" installation image from the [releases](https://www.offensive-security.com/kali-linux-arm-images/) page and burn it to the SD card using [Etcher](https://www.balena.io/etcher/) (extraction of the .xz file is not necessary).
 
-Once the image has finished burning to the SD card, insert the SD card into the Raspberry Pi.
+Once the image has finished burning to the SD card, it is necessary to connect the Pi to the internet. To do this, either use an ethernet cable, or open the SD card and add the following to 'wpa_supplicant.conf,' replacing 'SSID' and 'PASSWORD' with the appropriate values.
+
+```
+network={
+  ssid="SSID"
+  psk="PASSWORD"
+}
+```
+
+Insert the SD card into the Raspberry Pi and boot.
 
 **WARNING:** Do not attempt to insert the SD card while the device is powered, as it may corrupt the installation.
 
@@ -82,20 +88,6 @@ If an error appears on the client stating that remote host identification has fa
 ### Setting up [Mosh](https://mosh.org/)
 
 `apt install mosh`
-
-### Disabling the GUI
-
-Boot into a command line instead of XFCE
-
-`systemctl set-default multi-user.target`
-
-To revert to default, use
-
-`systemctl set-default graphical.target`
-
-Apply the changes
-
-`reboot`
 
 ## Setting up an access point
 
@@ -259,16 +251,6 @@ Make the changes persistent across reboots.
 Reboot to ensure everything has been set up correctly.
 
 `sudo reboot`
-
-## Connecting to a network
-
-To connect to a network, simply use an ethernet cable, or add the following to /etc/wpa_suplicant/wpa_supplicant.conf.
-
-```
-network={
-  ssid="SSID"
-  psk="PASSWORD"
-```
 
 ## Troubleshooting
 
