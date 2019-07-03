@@ -41,7 +41,7 @@ This documentation outlines the steps necessary to set up [Kali Linux](https://w
 
 Download the "Kali Linux RaspberryPi 2 and 3 64" installation image from the [releases](https://www.offensive-security.com/kali-linux-arm-images/) page and burn it to the SD card using [Etcher](https://www.balena.io/etcher/) (extraction of the .xz file is not necessary).
 
-Once the image has finished burning to the SD card, insert the SD card into the Raspberry Pi.
+Once the image has finished burning to the SD card, insert the SD card into the Raspberry Pi and boot.
 
 **WARNING:** Do not attempt to insert the SD card while the device is powered, as it may corrupt the installation.
 
