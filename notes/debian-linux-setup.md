@@ -7,6 +7,7 @@
 - [Setting up SSH](#setting-up-ssh)
   - [Generate new SSH keys](#generate-new-ssh-keys)
 - [Setting up i3wm](#setting-up-i3wm)
+  - [Installing Chrome](#installing-chrome)
 
 ## Setting up sudo
 
@@ -40,10 +41,22 @@ Log out and back in again for the changes to take effect.
 
 ## Setting up i3wm
 
-Install i3 and additional software
+Install i3
 
-`sudo apt install i3 xorg rxvt-unicode`
+`sudo apt install i3 xorg`
+
+Install recommended software (optional)
+
+`sudo apt install rxvt-unicode hsetroot feh compton ranger`
 
 After login, use `startx` to launch i3.
 
 **NOTE:** For changes to ~/.Xresources to take effect, run `xrdb -merge ~/.Xresources`
+
+### Installing Chrome
+
+`wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb`
+
+`sudo apt install ./google-chrome-stable_current_amd64.deb`
+
+`rm google-chrome-stable_current_amd64.deb`
