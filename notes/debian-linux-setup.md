@@ -45,3 +45,5 @@ Install i3 and additional software
 `sudo apt install i3 xorg rxvt-unicode`
 
 After login, use `startx` to launch i3.
+
+**NOTE:** For changes to ~/.Xresources to take effect, run `xrdb -merge ~/.Xresources`
