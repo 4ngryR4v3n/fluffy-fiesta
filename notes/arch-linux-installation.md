@@ -38,7 +38,7 @@ The rest of the drive can be allocated to a singular primary partition, or it ca
 
 Mount the filesystem
 
-`mount /dev/sdX1 /mnt`
+`mount /dev/sdXX /mnt`
 
 ### Installation
 
