@@ -5,7 +5,7 @@
 - [Setting up sudo](#setting-up-sudo)
 - [Setting up SSH](#setting-up-ssh)
   - [Generate new SSH keys](#generate-new-ssh-keys)
-- [Installing i3](#installing-i3)
+- [Setting up i3wm](#setting-up-i3wm)
 
 ## Setting up sudo
 
@@ -33,8 +33,10 @@ Log out and back in again for the changes to take effect.
 
 `dpkg-reconfigure openssh-server`
 
-## Installing i3
+## Setting up i3wm
 
-`sudo apt install i3 xorg`
+Install i3 and additional software
+
+`sudo apt install i3 xorg rxvt-unicode`
 
 After login, use `startx` to launch i3.
