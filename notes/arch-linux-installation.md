@@ -10,6 +10,7 @@
   - [Users and Groups](#users-and-groups)
   - [Setting up SSH](#setting-up-ssh)
   - [Installing yay](#installing-yay)
+  - [Setting up i3wm](#setting-up-i3wm)
 
 ## Installing Arch
 
@@ -115,7 +116,7 @@ Log out and back in again for the changes to take effect.
 
 Install SSH
 
-`pacman -S openssh`
+`sudo pacman -S openssh`
 
 Allow the SSH server to start on boot (optional)
 
@@ -130,3 +131,23 @@ Allow the SSH server to start on boot (optional)
 `makepkg -si`
 
 `cd .. && rm -r yay`
+
+### Setting up i3wm
+
+Install i3-gaps
+
+`sudo pacman -S i3-gaps`
+
+Create ~/.xinitrc with the following contents
+
+```
+#!/bin/sh
+
+exec i3
+```
+
+Install common CLI utilities (optional)
+
+`sudo pacman -S net-tools wireless_tools iw git wget htop vim`
+
+`yay -S gotop`
