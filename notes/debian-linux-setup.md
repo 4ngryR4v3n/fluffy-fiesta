@@ -86,7 +86,3 @@ After login, use `startx` to launch i3.
 `sudo apt install ./google-chrome-stable_current_amd64.deb`
 
 `rm google-chrome-stable_current_amd64.deb`
-
-### Setting up dunst
-
-`sudo apt install ...`
