@@ -30,7 +30,7 @@ Partition the disk
 
 `cfdisk /dev/sdX`
 
-Delete any old partitions and create a boot partition. 1GB is overkill, but it never hurts to be safe. Don't forget to set the partition type to "BIOS Boot." A swap partition is generally not necessary anymore, but if you still want one or you are running low-spec hardware, go ahead and create it now. Initialize it with
+Delete any old partitions and create a boot partition. 1GB is overkill, but it never hurts to be safe. Don't forget to set the partition type to "BIOS boot." A swap partition is generally not necessary anymore, but if you still want one or you are running low-spec hardware, go ahead and create it now. Initialize it with
 
 `swapon /dev/sdX2`
 
