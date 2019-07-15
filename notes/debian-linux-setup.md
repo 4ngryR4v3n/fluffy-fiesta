@@ -10,6 +10,7 @@
   - [Generate new SSH keys](#generate-new-ssh-keys)
 - [Setting up i3wm](#setting-up-i3wm)
   - [Installing Chrome](#installing-chrome)
+  - [Setting up dunst](#setting-up-dunst)
 
 ## Setting up sudo
 
@@ -66,17 +67,17 @@ Update and upgrade
 
 ## Setting up i3wm
 
+**NOTE:** For changes to ~/.Xresources to take effect, run `xrdb -merge ~/.Xresources`
+
 Install i3
 
 `sudo apt install i3 xorg`
 
 Install recommended software (optional)
 
-`sudo apt install rxvt-unicode hsetroot feh compton ranger`
+`sudo apt install rxvt-unicode hsetroot feh compton ranger git`
 
 After login, use `startx` to launch i3.
-
-**NOTE:** For changes to ~/.Xresources to take effect, run `xrdb -merge ~/.Xresources`
 
 ### Installing Chrome
 
@@ -85,3 +86,7 @@ After login, use `startx` to launch i3.
 `sudo apt install ./google-chrome-stable_current_amd64.deb`
 
 `rm google-chrome-stable_current_amd64.deb`
+
+### Setting up dunst
+
+`sudo apt install ...`
