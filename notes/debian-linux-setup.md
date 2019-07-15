@@ -3,7 +3,9 @@
 ## Contents
 
 - [Setting up sudo](#setting-up-sudo)
-- [Installing net-tools](#installing-net-tools)
+- [Configuring sources](#configuring-sources)
+- [Installing wireless drivers (Thinkpad T430s)](#installing-wireless-drivers-thinkpad-t430s)
+- [Installing common CLI utilities](#installing-common-cli-utilities)
 - [Setting up SSH](#setting-up-ssh)
   - [Generate new SSH keys](#generate-new-ssh-keys)
 - [Setting up i3wm](#setting-up-i3wm)
@@ -25,9 +27,32 @@ Add enable sudo for non-root users
 
 Log out and back in again for the changes to take effect.
 
-## Installing net-tools
+## Configuring Sources
 
-`sudo apt install net-tools`
+Replace the contents of /etc/apt/sources.list with the following
+
+```
+deb http://deb.debian.org/debian stretch main contrib non-free
+deb-src http://deb.debian.org/debian stretch main contrib non-free
+
+deb http://deb.debian.org/debian-security/ stretch/updates main contrib non-free
+deb-src http://deb.debian.org/debian-security/ stretch/updates main contrib non-free
+
+deb http://deb.debian.org/debian stretch-updates main contrib non-free
+deb-src http://deb.debian.org/debian stretch-updates main contrib non-free
+```
+
+Update and upgrade
+
+`sudo apt-get update && sudo apt-get upgrade`
+
+## Installing wireless drivers (Thinkpad T430s)
+
+`sudo apt install firmware-iwlwifi`
+
+## Installing common CLI utilities
+
+`sudo apt install htop net-tools`
 
 ## Setting up SSH
 
