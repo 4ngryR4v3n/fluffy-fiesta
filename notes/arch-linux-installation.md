@@ -77,9 +77,15 @@ Create /etc/hostname with the following contents, replacing `HOSTNAME` with your
 
 `HOSTNAME`
 
-Exit the chroot environment and reboot (don't forget to remove the installation media).
+Exit the chroot environment
 
 `exit`
+
+Unmount the filesystem
+
+`umount -R /mnt`
+
+Reboot (don't forget to remove the installation media).
 
 `reboot`
 
