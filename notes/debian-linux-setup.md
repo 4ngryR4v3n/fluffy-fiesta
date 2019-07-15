@@ -3,6 +3,7 @@
 ## Contents
 
 - [Setting up sudo](#setting-up-sudo)
+- [Installing net-tools](#installing-net-tools)
 - [Setting up SSH](#setting-up-ssh)
   - [Generate new SSH keys](#generate-new-ssh-keys)
 - [Setting up i3wm](#setting-up-i3wm)
@@ -22,6 +23,10 @@ Add enable sudo for non-root users
 `adduser USER sudo`
 
 Log out and back in again for the changes to take effect.
+
+## Installing net-tools
+
+`sudo apt install net-tools`
 
 ## Setting up SSH
 
