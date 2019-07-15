@@ -8,6 +8,8 @@
   - [Post-installation](#post-installation)
 - [Configuring Arch](#configuring-arch)
   - [Users and Groups](#users-and-groups)
+  - [Setting up SSH](#setting-up-ssh)
+  - [Installing yay](#installing-yay)
 
 ## Installing Arch
 
@@ -118,3 +120,13 @@ Install SSH
 Allow the SSH server to start on boot (optional)
 
 `sudo systemctl enable sshd`
+
+### Installing yay
+
+`git clone https://aur.archlinux.org/yay.git`
+
+`cd yay`
+
+`makepkg -si`
+
+`cd .. && rm -r yay`
