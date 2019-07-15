@@ -11,7 +11,7 @@
 - [Setting up i3wm](#setting-up-i3wm)
   - [Installing Chrome](#installing-chrome)
 
-## Setting up sudo
+## Setting up sudo ## [Top](#contents)
 
 Log into the root user
 
