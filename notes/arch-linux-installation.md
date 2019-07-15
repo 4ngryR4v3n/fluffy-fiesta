@@ -106,3 +106,15 @@ Add a new user and give it a password
 Give the new user administrator priviledges by adding the following below `root ALL=(ALL) ALL`, replacing `USERNAME` with the name of the new user.
 
 `USERNAME ALL=(ALL) ALL`
+
+Log out and back in again for the changes to take effect.
+
+### Setting up SSH
+
+Install SSH
+
+`pacman -S openssh`
+
+Allow the SSH server to start on boot (optional)
+
+`sudo systemctl enable sshd`
