@@ -136,7 +136,7 @@ Allow the SSH server to start on boot (optional)
 
 Install i3-gaps
 
-`sudo pacman -S i3-gaps`
+`sudo pacman -S xorg-server xorg-xinit i3-gaps`
 
 Create ~/.xinitrc with the following contents
 
