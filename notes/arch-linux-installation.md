@@ -16,7 +16,7 @@
 
 ### Preparation
 
-Disbale UEFI and secure boot before proceeding as they sometimes cause problems and boot the arch installation media from a thumb drive. Root autologin is enabled by default.
+Disbale UEFI and secure boot before proceeding as they sometimes cause problems. Also, use a freshly formatted storage device for the best results. Boot the arch installation media from a thumb drive. Root autologin is enabled by default.
 
 Plug in an ethernet cable and ensure you are connected to the internet
 
@@ -30,15 +30,19 @@ Partition the disk
 
 `cfdisk /dev/sdX`
 
-Delete any old partitions and create a boot partition. 1GB is overkill, but it never hurts to be safe. Don't forget to set the partition type to "BIOS boot." A swap partition is generally not necessary anymore, but if you still want one or you are running low-spec hardware, go ahead and create it now. Initialize it with
+Delete any old partitions, create a primary partition, and flag it as it as bootable. A swap partition is generally not necessary anymore, but if you still want one or you are running low-spec hardware, go ahead and create it now. Initialize it with
 
 `swapon /dev/sdX2`
 
 The rest of the drive can be allocated to a singular primary partition, or it can be split to your liking.
 
+Create the filesystem
+
+`mkfs.ext4 /dev/sdX1`
+
 Mount the filesystem
 
-`mount /dev/sdXX /mnt`
+`mount /dev/sdX1 /mnt`
 
 ### Installation
 
