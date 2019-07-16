@@ -80,6 +80,12 @@ Create /etc/hostname with the following contents, replacing `HOSTNAME` with your
 
 `HOSTNAME`
 
+Install the bootloader
+
+`pacman -S grub`
+
+`grub-install`
+
 Exit the chroot environment
 
 `exit`
