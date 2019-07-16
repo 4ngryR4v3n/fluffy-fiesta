@@ -74,9 +74,11 @@ Then add the following to /etc/locale.conf
 
 `LANG=en_US.UTF-8`
 
-Install networkmanager and enable the service
+Install network utilties
 
-`pacman -S networkmanager`
+`pacman -S net-tools wireless_tools iw networkmanager`
+
+Enable networkmanager to run on boot
 
 `systemctl enable NetworkManager`
 
@@ -136,6 +138,8 @@ Allow the SSH server to start on boot (optional)
 
 ### Installing yay
 
+`sudo pacman -S git`
+
 `git clone https://aur.archlinux.org/yay.git`
 
 `cd yay`
@@ -148,18 +152,8 @@ Allow the SSH server to start on boot (optional)
 
 Install i3-gaps
 
-`sudo pacman -S xorg-server xorg-xinit i3-gaps`
+`sudo pacman -S xorg-server xorg-xinit i3-gaps ttf-dejavu`
 
 Create ~/.xinitrc with the following contents
 
-```
-#!/bin/sh
-
-exec i3
-```
-
-Install common CLI utilities (optional)
-
-`sudo pacman -S net-tools wireless_tools iw git wget htop vim`
-
-`yay -S gotop`
+`exec i3`
