@@ -1,0 +1,14 @@
+[bar/bar1]
+modules-right = backlight volume
+
+[module/backlight]
+type = internal/backlight
+card = intel_backlight
+format = <label>
+label = %percentage%%
+
+[module/volume]
+type = custom/script
+exec = amixer get Master | awk '$0~/%/{print $4}' | tr -d '[]'
+tail = true
+interval = 0

@@ -17,3 +17,27 @@
 *color13:     #825ECE
 *color14:     #62CDCD
 *color15:     #E0E5E5
+
+!! URxvt
+URxvt.scrollBar: false
+!! URxvt.background: [70]#000000
+
+!! URxvt.font: xft:Px437 IBM VGA8:pixelsize=16:antialias=false
+!! URxvt.boldFont: xft:Px437 IBM VGA8:pixelsize=16:antialias=false
+!! URxvt.italicFont: xft:Px437 IBM VGA8:pixelsize=16:antialias=false
+!! URxvt.boldItalicFont: xft:Px437 IBM VGA8:pixelsize=16:antialias=false
+
+URxvt.font: xft:Fira Mono:size=9
+URxvt.boldFont: xft:Fira Mono:size=9
+URxvt.italicFont: xft:Fira Mono:size=9
+URxvt.boldItalicFont: xft:Fira Mono:size=9
+
+URxvt.perl-ext-common: default,matcher,url-select,keyboard-select
+
+!! url-select
+URxvt.keysym.M-u: perl:url-select:select_next
+URxvt.url-select.launcher: /usr/bin/xdg-open
+URxvt.url-select.underline: true
+
+!! keyboard-select
+URxvt.keysym.M-Escape: perl:keyboard-select:activate
