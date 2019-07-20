@@ -7,7 +7,7 @@
 
 ## Requirements
 
-- Arch Linux
+- [Arch Linux](https://www.archlinux.org/)
 
 ## Dependencies
 
