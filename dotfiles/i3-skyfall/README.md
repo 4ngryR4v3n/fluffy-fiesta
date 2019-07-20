@@ -21,3 +21,5 @@ Install the following dependencies.
 - [hsetroot](https://github.com/himdel/hsetroot)
 - [rxvt-unicode](https://wiki.archlinux.org/index.php/Rxvt-unicode)
 - [sxhkd](https://github.com/baskerville/sxhkd)
+- [xorg-server](https://www.archlinux.org/packages/extra/x86_64/xorg-server/)
+- [xorg-xinit](https://www.archlinux.org/packages/extra/x86_64/xorg-xinit/)
