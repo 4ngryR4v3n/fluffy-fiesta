@@ -7,6 +7,7 @@ This configuration for Arch Linux is based on the [skyfall](https://github.com/e
 ## Contents
 
 - [Dependencies](#dependencies)
+- [Installation](#installation)
 
 ## Dependencies
 
@@ -26,3 +27,17 @@ Install the following dependencies.
 - [sxhkd](https://github.com/baskerville/sxhkd)
 - [xorg-server](https://www.archlinux.org/packages/extra/x86_64/xorg-server/)
 - [xorg-xinit](https://www.archlinux.org/packages/extra/x86_64/xorg-xinit/)
+
+## Installation
+
+`git clone https://github.com/Perdyx/fluffy-fiesta.git`
+
+`cp -r fluffy-fiesta/dotfiles/skyfall/polybar/ ~/.config/`
+
+`cp -r fluffy-fiesta/dotfiles/skyfall/bspwm/ ~/.config/`
+
+`cp -r fluffy-fiesta/dotfiles/skyfall/sxhkd/ ~/.config/`
+
+`cp fluffy-fiesta/dotfiles/skyfall/.xinitrc ~/`
+
+`cp fluffy-fiesta/dotfiles/skyfall/.Xresources ~/`
