@@ -13,7 +13,7 @@
 
 Install the following dependencies.
 
-`sudo pacman -S bspwm dmenu feh hsetroot rxvt-unicode sxhkd`
+`sudo pacman -S bspwm dmenu feh hsetroot rxvt-unicode sxhkd xorg-server xorg-xinit`
 
 - [bspwm](https://github.com/baskerville/bspwm)
 - [dmenu](https://wiki.archlinux.org/index.php/dmenu)
