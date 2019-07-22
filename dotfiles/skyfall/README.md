@@ -30,6 +30,8 @@ Install the following dependencies.
 
 ## Installation
 
+Be sure to make a backup of any existing configuration files before continuing.
+
 `git clone https://github.com/Perdyx/fluffy-fiesta.git`
 
 `cp -r fluffy-fiesta/dotfiles/skyfall/polybar/ ~/.config/`
