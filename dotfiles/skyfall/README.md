@@ -1,5 +1,9 @@
 # Skyfall
 
+## Description
+
+This configuration is based on the [skyfall](https://github.com/elenapan/dotfiles/blob/master/.xfiles/skyfall) color scheme.
+
 ## Contents
 
 - [Requirements](#requirements)
