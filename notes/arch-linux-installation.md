@@ -145,4 +145,4 @@ Allow the SSH server to start on boot (optional)
 
 `makepkg -si`
 
-`cd .. && rm -r yay`
+`cd .. && sudo rm -r yay`
