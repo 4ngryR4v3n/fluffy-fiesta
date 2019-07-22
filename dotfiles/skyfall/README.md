@@ -2,16 +2,11 @@
 
 ## Description
 
-This configuration is based on the [skyfall](https://github.com/elenapan/dotfiles/blob/master/.xfiles/skyfall) color scheme.
+This configuration for Arch Linux is based on the [skyfall](https://github.com/elenapan/dotfiles/blob/master/.xfiles/skyfall) color scheme.
 
 ## Contents
 
-- [Requirements](#requirements)
 - [Dependencies](#dependencies)
-
-## Requirements
-
-- [Arch Linux](https://www.archlinux.org/)
 
 ## Dependencies
 
