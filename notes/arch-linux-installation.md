@@ -119,7 +119,7 @@ Add a new user and give it a password
 
 `passwd USERNAME`
 
-Give the new user administrator priviledges by adding the following below `root ALL=(ALL) ALL`, replacing `USERNAME` with the name of the new user.
+Give the new user administrator priviledges by adding the following to /etc/sudoers below `root ALL=(ALL) ALL`, replacing `USERNAME` with the name of the new user.
 
 `USERNAME ALL=(ALL) ALL`
 
