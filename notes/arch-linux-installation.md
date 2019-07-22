@@ -10,7 +10,6 @@
   - [Users and Groups](#users-and-groups)
   - [Setting up SSH](#setting-up-ssh)
   - [Installing yay](#installing-yay)
-  - [Setting up i3wm](#setting-up-i3wm)
 
 ## Installing Arch
 
@@ -147,13 +146,3 @@ Allow the SSH server to start on boot (optional)
 `makepkg -si`
 
 `cd .. && rm -r yay`
-
-### Setting up i3wm
-
-Install i3-gaps
-
-`sudo pacman -S xorg-server xorg-xinit i3-gaps ttf-dejavu`
-
-Create ~/.xinitrc with the following contents
-
-`exec i3`
