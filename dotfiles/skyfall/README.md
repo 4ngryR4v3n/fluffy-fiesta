@@ -39,6 +39,8 @@ Be sure to make a backup of any existing configuration files before continuing.
 
 `cp -r fluffy-fiesta/dotfiles/skyfall/bspwm/ ~/.config/`
 
+`chmod +x ~/.config/bspwm/bspwmrc`
+
 `cp -r fluffy-fiesta/dotfiles/skyfall/sxhkd/ ~/.config/`
 
 `cp fluffy-fiesta/dotfiles/skyfall/.xinitrc ~/`
