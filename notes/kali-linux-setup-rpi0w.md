@@ -189,7 +189,7 @@ Edit /etc/default/hostapd and change the value of 'DAEMON_CONF' to '/etc/hostapd
 
 Back up the original configuration.
 
-`mv /etc/dnsmasq.conf /etc/dnsmasq.conf.orig`
+`cp /etc/dnsmasq.conf /etc/dnsmasq.conf.orig`
 
 Replace the contents of /etc/dnsmasq.conf with
 
