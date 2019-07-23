@@ -250,7 +250,7 @@ Make the changes persistent across reboots.
 
 Reboot to ensure everything has been set up correctly.
 
-`sudo reboot`
+`reboot`
 
 ## Troubleshooting
 
