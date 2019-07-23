@@ -87,7 +87,7 @@ If an error appears on the client stating that remote host identification has fa
 
 ### Setting up [Mosh](https://mosh.org/)
 
-`apt install mosh`
+`apt-get install mosh`
 
 ## Setting up an access point
 
