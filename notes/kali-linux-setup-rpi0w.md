@@ -216,7 +216,7 @@ Configure [iptables](https://wiki.debian.org/iptables).
 
 `update-alternatives --config iptables`
 
-**NOTE:** Be sure to select legacy mode.
+Be sure to select legacy mode.
 
 `iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE`
 
