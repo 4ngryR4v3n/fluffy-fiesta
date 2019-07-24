@@ -81,6 +81,8 @@ If an error appears on the client stating that remote host identification has fa
 
 ### Setting up [Mosh](https://mosh.org/)
 
+Using this may cause scrollback issues on client terminals, but it's good to have when you need it.
+
 `apt install mosh`
 
 ### Disabling the GUI
