@@ -2,10 +2,10 @@
 
 sxhkd &
 # compton &
-feh --bg-scale ~/wallpaper.png
-polybar bar1 &
+feh --bg-scale ~/.wallpaper.png
+$HOME/.config/polybar/launch.sh
 
-bspc monitor -d I II III IV V VI VII VIII IX X
+bspc monitor -d 1 2 3 4
 
 bspc config border_width         2
 bspc config window_gap          12
