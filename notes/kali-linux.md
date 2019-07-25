@@ -8,10 +8,10 @@
     - [Customizing the installation](#customizing-the-installation)
         - [Requirements](#requirements-1)
         - [Setting up the live-build system](#setting-up-the-live-build-system)
-            - [Configuring the package list](#configuring-the-package-list)
+        - [Configuring the package list](#configuring-the-package-list)
         - [Building the image](#building-the-image)
-            - [Configuring SSH for host-guest communication](#configuring-ssh-for-host-guest-communication)
-            - [Transferring the image to the host machine via scp](#transferring-the-image-to-the-host-machine-via-scp)
+        - [Configuring SSH for host-guest communication](#configuring-ssh-for-host-guest-communication)
+        - [Transferring the image to the host machine via scp](#transferring-the-image-to-the-host-machine-via-scp)
     - [Preparing the installation media](#preparing-the-installation-media)
     - [Installing the system](#installing-the-system)
 - [Troubleshooting](#troubleshooting)
@@ -52,7 +52,7 @@ Set up the live build environment.
 
 `git clone git://git.kali.org/live-build-config.git && cd live-build-config`
 
-##### Configuring the package list
+#### Configuring the package list
 
 Other variants can be used, but the Gnome one should work fine for most situations. Edit live-build-config/kali-config/variant-gnome/package-lists/kali.list.chroot to your liking.
 
@@ -66,7 +66,7 @@ For more information, see [Kali Metapackages](https://tools.kali.org/kali-metapa
 
 *Note: If you have selected another variant, be sure to change that here.*
 
-##### Configuring SSH for host-guest communication
+#### Configuring SSH for host-guest communication
 
 Edit /etc/ssh/sshd_config to replace `PermitRootLogin prohibit-password` with `PermitRootLogin yes.`.
 
@@ -80,7 +80,7 @@ Restart the SSH server.
 
 `service ssh restart`
 
-##### Transferring the image to the host machine via `scp`
+#### Transferring the image to the host machine via `scp`
 
 From the host machine, run the following.
 
