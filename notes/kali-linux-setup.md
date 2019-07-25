@@ -17,7 +17,7 @@
 
 ## Description
 
-This documentation outlines the steps necessary to install and configure [Kali Linux](https://www.kali.org/) for use as a primary penetration testing system.
+This documentation outlines the steps to install and configure [Kali Linux](https://www.kali.org/) for use as a primary penetration testing system on various platforms.
 
 **NOTE:** This documentation is intended for personal use and may result in undesired functionality.
 
