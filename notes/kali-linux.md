@@ -3,7 +3,7 @@
 ## Contents
 
 - [Description](#description)
-- [Installation (amd64 x86_64)](#installation-amd64-x86-64)
+- [Installation (amd64 x86_64)](#installation-amd64-x8664)
     - [Requirements](#requirements)
     - [Customizing the installation](#customizing-the-installation)
         - [Requirements](#requirements-1)
