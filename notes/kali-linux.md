@@ -39,6 +39,7 @@
         - [Set up IPv4 forwarding](#set-up-ipv4-forwarding)
         - [Configure iptables](#configure-iptables)
         - [Enable hostapd and dnsmasq to run at boot](#configure-hostapd-and-dnsmasq-to-run-at-boot)
+    - [Setting up virtual network interfaces](#setting-up-virtual-network-interfaces)
     - [Disabling the GUI](#disabling-the-gui)
     - [Installing TOR (GUI only)](#installing-tor-gui-only)
 - [Troubleshooting](#troubleshooting)
@@ -422,6 +423,18 @@ Make the changes persistent across reboots.
 **NOTE:** If an error occurs regarding masked services, run `systemctl unmask SERVICE`.
 
 Reboot to ensure everything has been set up correctly.
+
+### Setting up virtual network interfaces
+
+Virtual network interfaces allow you to split one network card into multiple interfaces. This allows a single card to run in multiple modes and can be extremely useful. Virtual interfaces work just like physical ones, so the usage is the same.
+
+Add an interface.
+
+`iw phy phy0 interface add NAME type MODE && ifconfig NAME up`
+
+Delete an interface.
+
+`ifconfig NAME down && iw dev NAME del`
 
 ### Disabling the GUI
 
