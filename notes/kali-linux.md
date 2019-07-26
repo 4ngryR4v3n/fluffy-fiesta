@@ -423,7 +423,7 @@ Make the changes persistent across reboots.
 
 Reboot to ensure everything has been set up correctly.
 
-### Disable the GUI
+### Disabling the GUI
 
 Sometimes, especially on lower-end hardware such as a Raspberry Pi, it is desirable to save system resources by disabling the desktop environment. This will allow you to boot into a the Linux TTY. You should still be able to start a graphical interface at any time by typing `startx`.
 
