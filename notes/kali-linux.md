@@ -339,7 +339,7 @@ wpa=2
 wpa_key_mgmt=WPA-PSK
 rsn_pairwise=CCMP
 
-ssid=Pi3-AP
+ssid=Pi-AP
 wpa_passphrase=raspberry
 ```
 
