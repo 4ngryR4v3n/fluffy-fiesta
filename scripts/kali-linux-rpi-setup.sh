@@ -38,10 +38,8 @@ else
 fi
 
 # Add aliases to manage virtual monitor interface
-echo "
-function mon0up() { iw phy phy0 interface add mon0 type managed && ifconfig mon0 up; }
-function mon0down() { ifconfig mon0 down && iw dev mon0 del; }
-" > .bash_aliases
+echo "function mon0up() { iw phy phy0 interface add mon0 type managed && ifconfig mon0 up; }
+function mon0down() { ifconfig mon0 down && iw dev mon0 del; }" > .bash_aliases
 
 # Install additional packages
 apt-get install $additional_packages -y
@@ -69,8 +67,7 @@ broadcast $broadcast
 
 allow-hotplug mon0
 iface mon0 inet dhcp
-wpa-conf /etc/wpa_supplicant/wpa_supplicant.conf
-" > /etc/network/interfaces
+wpa-conf /etc/wpa_supplicant/wpa_supplicant.conf" > /etc/network/interfaces
 
 # Configure hostapd
 echo "interface=wlan0
@@ -88,8 +85,7 @@ wpa_key_mgmt=WPA-PSK
 rsn_pairwise=CCMP
 
 ssid=$ssid
-wpa_passphrase=$wpa_passphrase
-" > /etc/hostapd/hostapd.conf
+wpa_passphrase=$wpa_passphrase" > /etc/hostapd/hostapd.conf
 
 # Enable/disable SSID broadcasting for the AP
 if [ !$ssid_broadcasting ]; then
@@ -114,8 +110,7 @@ bind-interfaces
 server=8.8.8.8
 domain-needed
 bogus-priv
-dhcp-range=$dhcp_range,12h
-" > /etc/dnsmasq.conf
+dhcp-range=$dhcp_range,12h" > /etc/dnsmasq.conf
 
 # Enable IPv4 forwarding
 echo "net.ipv4.ip_forward=1" >> /etc/sysctl.conf
