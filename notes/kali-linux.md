@@ -183,9 +183,7 @@ After installation, sometimes the full space of the SD card is not utilized. Run
 
 It is always a good idea to update your system before doing anything else, as errors can arise later on if you don't. This process will take a while depending on how long ago the installation image was built.
 
-`sudo apt-get update && apt-get upgrade`
-
-`sudo apt-get dist-upgrade`
+`sudo apt-get update && apt-get dist-upgrade`
 
 ### Setting up user accounts
 
