@@ -1,8 +1,13 @@
 #!/usr/bin/env bash
 
-set -euo pipefail
+# Usage:
+# Run the following then reboot before proceeding.
+#
+# apt-get update
+# apt-get upgrade
+# apt-get dist-upgrade
 
-export DEBIAN_FRONTEND=noninteractive
+set -euxo pipefail
 
 # Config vars
 hostname="kali"
@@ -19,10 +24,6 @@ wpa_passphrase="raspberry"
 ssid_broadcasting=true
 mac_filtering=false # Whitelist stored in /etc/hostapd/whitelist
 filtered_macs="" # Only use if $mac_filtering is true. Separate multiple addresses by a single space
-
-# Update and upgrade
-apt-get update -y
-apt-get upgrade -y
 
 # Set hostname
 hostnamectl set-hostname $hostname
@@ -130,7 +131,7 @@ iptables -A FORWARD -i mon0 -o wlan0 -m state --state RELATED,ESTABLISHED -j ACC
 iptables -A FORWARD -i wlan0 -o mon0 -j ACCEPT
 
 # Set up iptables persistence
-apt-get install iptables-persistent -y
+apt-get install iptables-persistent
 systemctl enable netfilter-persistent
 
 # Enable hostapd and dnsmasq to run at boot
