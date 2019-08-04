@@ -89,7 +89,7 @@ if [ !$ssid_broadcasting ]; then
 fi
 
 # Enable/disable MAC filtering for the AP
-if [ $mac_filtering ]; then
+if [ "$mac_filtering" = true ]; then
     echo "
 macaddr_acl=1
 accept_mac_file=/etc/hostapd/whitelist
@@ -126,8 +126,8 @@ iptables -A FORWARD -i mon0 -o wlan0 -m state --state RELATED,ESTABLISHED -j ACC
 iptables -A FORWARD -i wlan0 -o mon0 -j ACCEPT
 
 # Set up iptables persistence
-apt-get install iptables-persistent
-systemctl enable netfilter-persistent
+iptables-save > /etc/iptables.conf
+(crontab -l; echo -e "@reboot sudo iptables-restore < /etc/iptables.conf\n";) | crontab -
 
 # Enable hostapd and dnsmasq to run at boot
 if systemctl enable hostapd; then
