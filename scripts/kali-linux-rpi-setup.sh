@@ -4,7 +4,6 @@
 # Run the following then reboot before proceeding.
 #
 # apt-get update
-# apt-get upgrade
 # apt-get dist-upgrade
 
 set -euxo pipefail
