@@ -10,7 +10,7 @@
 # Reboot again.
 #
 
-set -euo pipefail
+set -euxo pipefail
 
 # Config vars
 hostname="kali"
@@ -135,21 +135,11 @@ iptables -A FORWARD -i wlan0 -o mon0 -j ACCEPT
 
 # Set up iptables persistence
 iptables-save > /etc/iptables.conf
-crontab -u root
-(crontab -l; echo -e "@reboot sudo iptables-restore < /etc/iptables.conf\n";) | crontab -
+echo -e "@reboot sudo iptables-restore < /etc/iptables.conf\n"
 
 # Enable hostapd and dnsmasq to run at boot
-systemctl enable hostapd
-if [ $? -ne 0 ]; then
-    systemctl unmask hostapd
-    systemctl enable hostapd
-fi
-
-systemctl enable dnsmasq
-if [ $? -ne 0 ]; then
-    systemctl unmask dnsmasq
-    systemctl enable dnsmasq
-fi
+systemctl enable hostapd || systemctl unmask hostapd && systemctl enable hostapd
+systemctl enable dnsmasq || systemctl unmask dnsmasq && systemctl enable dnsmasq
 
 # Clear bash history and flush it from memory (necessary because this script uses passwords in plaintext using bash commands)
 cat /dev/null > ~/.bash_history && history -c
