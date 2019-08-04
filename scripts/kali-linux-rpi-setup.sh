@@ -1,12 +1,20 @@
 #!/usr/bin/env bash
-
-# Usage: Run 'apt-get update && apt-get dist-upgrade' and reboot before proceeding.
+#
+# Usage:
+# Update.
+#   'apt-get update && apt-get dist-upgrade'
+# Reboot.
+# Edit the config vars below.
+# Run the script.
+#   './kali-linux-rpi-setup.sh'
+#
 
 set -euxo pipefail
 
 # Config vars
 hostname="kali"
 root_password="toor"
+ssh_private_key=false
 gui_enabled="false"
 additional_packages="" # Separate multiple packages by a single space
 address="192.168.255.1"
@@ -136,6 +144,12 @@ fi
 
 if systemctl enable dnsmasq; then
     systemctl unmask dnsmasq
+fi
+
+# Set up private key authentication over ssh
+if [ "$ssh_private_key" = true ]; then
+    ssh-keygen -t rsa
+    sed -i "s/PermitRootLogin yes/PermitRootLogin without-password/g"
 fi
 
 # Clear bash history and flush it from memory (necessary because this script uses passwords in plaintext using bash commands)
