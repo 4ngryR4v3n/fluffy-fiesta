@@ -1,0 +1,21 @@
+[global_config]
+  geometry_hinting = True
+  tab_position = bottom
+[keybindings]
+[profiles]
+  [[default]]
+    background_darkness = 0.9
+    background_type = transparent
+    cursor_color = "#aaaaaa"
+    font = Px437 IBM VGA8 12
+    foreground_color = "#ffffff"
+    scrollback_infinite = True
+[layouts]
+  [[default]]
+    [[[window0]]]
+      type = Window
+      parent = ""
+    [[[child1]]]
+      type = Terminal
+      parent = window0
+[plugins]
