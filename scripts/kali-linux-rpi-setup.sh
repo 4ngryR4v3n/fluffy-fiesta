@@ -7,6 +7,7 @@
 # Edit the config vars below.
 # Run the script.
 #   './kali-linux-rpi-setup.sh'
+# Reboot again.
 #
 
 set -euo pipefail
