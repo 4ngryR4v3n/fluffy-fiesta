@@ -132,7 +132,10 @@ iptables -A FORWARD -i wlan0 -o mon0 -j ACCEPT
 
 # Set up iptables persistence
 iptables-save > /etc/iptables.conf
-echo -e "@reboot root iptables-restore < /etc/iptables.conf\n" /etc/crontab
+echo "#!/bin/sh -e
+iptables-restore < /etc/iptables.conf
+exit0" > /etc/rc.local
+chmod +x /etc/rc.local
 
 # Enable hostapd and dnsmasq to run at boot
 systemctl enable hostapd || systemctl unmask hostapd && systemctl enable hostapd
