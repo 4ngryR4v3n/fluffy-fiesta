@@ -155,7 +155,3 @@ fi
 
 # Clear bash history and flush it from memory (necessary because this script uses passwords in plaintext using bash commands)
 cat /dev/null > ~/.bash_history && history -c
-
-# Finish and reboot
-read -p "Setup complete. Press enter to reboot..."
-reboot
