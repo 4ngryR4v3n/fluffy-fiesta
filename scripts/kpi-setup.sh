@@ -67,6 +67,7 @@ broadcast $broadcast
 
 allow-hotplug mon0
 iface mon0 inet dhcp
+
 wpa-conf /etc/wpa_supplicant/wpa_supplicant.conf" > /etc/network/interfaces
 
 # Configure hostapd
