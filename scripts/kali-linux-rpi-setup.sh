@@ -1,10 +1,6 @@
 #!/usr/bin/env bash
 
-# Usage:
-# Run the following then reboot before proceeding.
-#
-# apt-get update
-# apt-get dist-upgrade
+# Usage: Run 'apt-get update && apt-get dist-upgrade' and reboot before proceeding.
 
 set -euxo pipefail
 
