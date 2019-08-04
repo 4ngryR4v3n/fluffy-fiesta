@@ -15,7 +15,6 @@ set -euo pipefail
 # Config vars
 hostname="kali"
 root_password="toor"
-ssh_private_key=false
 gui_enabled="false"
 additional_packages="" # Separate multiple packages by a single space
 address="192.168.100.1"
@@ -36,7 +35,7 @@ hostnamectl set-hostname $hostname
 echo -e "$root_password\n$root_password" | passwd root
 
 # Enable/disable GUI
-if [ $gui_enabled ]; then
+if [ "$gui_enabled" = true ]; then
     systemctl set-default graphical.target
 else
     systemctl set-default multi-user.target
@@ -93,7 +92,7 @@ ssid=$ssid
 wpa_passphrase=$wpa_passphrase" > /etc/hostapd/hostapd.conf
 
 # Enable/disable SSID broadcasting for the AP
-if [ !$ssid_broadcasting ]; then
+if [ "$ssid_broadcasting" = false ]; then
     echo "ignore_broadcast_ssid=1" >> /etc/hostapd/hostapd.conf
 fi
 
@@ -140,18 +139,16 @@ crontab -u root
 (crontab -l; echo -e "@reboot sudo iptables-restore < /etc/iptables.conf\n";) | crontab -
 
 # Enable hostapd and dnsmasq to run at boot
-if systemctl enable hostapd; then
+systemctl enable hostapd
+if [ $? -ne 0 ]; then
     systemctl unmask hostapd
+    systemctl enable hostapd
 fi
 
-if systemctl enable dnsmasq; then
+systemctl enable dnsmasq
+if [ $? -ne 0 ]; then
     systemctl unmask dnsmasq
-fi
-
-# Set up private key authentication over ssh
-if [ "$ssh_private_key" = true ]; then
-    ssh-keygen -t rsa
-    sed -i "s/PermitRootLogin yes/PermitRootLogin without-password/g" /etc/ssh/sshd_config
+    systemctl enable dnsmasq
 fi
 
 # Clear bash history and flush it from memory (necessary because this script uses passwords in plaintext using bash commands)
