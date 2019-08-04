@@ -43,7 +43,7 @@ fi
 
 # Add aliases to manage virtual monitor interface
 echo "function mon0up() { iw phy phy0 interface add mon0 type managed && ifconfig mon0 up; }
-function mon0down() { ifconfig mon0 down && iw dev mon0 del; }" > .bash_aliases
+function mon0down() { ifconfig mon0 down && iw dev mon0 del; }" > ~/.bash_aliases
 
 # Install additional packages
 apt-get install $additional_packages -y
