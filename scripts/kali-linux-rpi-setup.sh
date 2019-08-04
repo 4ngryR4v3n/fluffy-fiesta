@@ -102,8 +102,7 @@ fi
 if [ "$mac_filtering" = true ]; then
     echo "
 macaddr_acl=1
-accept_mac_file=/etc/hostapd/whitelist
-    " >> /etc/hostapd/hostapd.conf
+accept_mac_file=/etc/hostapd/whitelist" >> /etc/hostapd/hostapd.conf
 
     echo $filtered_macs | tr ' ' '\n' > /etc/hostapd/whitelist
 fi
