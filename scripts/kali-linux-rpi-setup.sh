@@ -9,7 +9,7 @@
 #   './kali-linux-rpi-setup.sh'
 #
 
-set -euxo pipefail
+set -euo pipefail
 
 # Config vars
 hostname="kali"
@@ -135,6 +135,7 @@ iptables -A FORWARD -i wlan0 -o mon0 -j ACCEPT
 
 # Set up iptables persistence
 iptables-save > /etc/iptables.conf
+crontab -u root
 (crontab -l; echo -e "@reboot sudo iptables-restore < /etc/iptables.conf\n";) | crontab -
 
 # Enable hostapd and dnsmasq to run at boot
@@ -149,7 +150,7 @@ fi
 # Set up private key authentication over ssh
 if [ "$ssh_private_key" = true ]; then
     ssh-keygen -t rsa
-    sed -i "s/PermitRootLogin yes/PermitRootLogin without-password/g"
+    sed -i "s/PermitRootLogin yes/PermitRootLogin without-password/g" /etc/ssh/sshd_config
 fi
 
 # Clear bash history and flush it from memory (necessary because this script uses passwords in plaintext using bash commands)
