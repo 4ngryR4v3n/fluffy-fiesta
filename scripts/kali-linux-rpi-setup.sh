@@ -91,6 +91,8 @@ rsn_pairwise=CCMP
 ssid=$ssid
 wpa_passphrase=$wpa_passphrase" > /etc/hostapd/hostapd.conf
 
+sed -i "s/#DAEMON_CONF=\"\"/DAEMON_CONF=\"\/etc\/hostapd\/hostapd.conf\"/g" /etc/default/hostapd
+
 # Enable/disable SSID broadcasting for the AP
 if [ "$ssid_broadcasting" = false ]; then
     echo "ignore_broadcast_ssid=1" >> /etc/hostapd/hostapd.conf
