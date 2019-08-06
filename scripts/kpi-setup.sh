@@ -9,6 +9,8 @@
 #   './kali-linux-rpi-setup.sh'
 # Reboot again.
 #
+#
+
 
 set -euxo pipefail
 
@@ -16,12 +18,12 @@ set -euxo pipefail
 hostname="kali"
 root_password="toor"
 gui_enabled="false"
-additional_packages="" # Separate multiple packages by a single space
-address="192.168.100.1"
+additional_packages="htop" # Separate multiple packages by a single space
+address="192.168.230.1"
 netmask="255.255.255.0"
-network="192.168.100.0"
-broadcast="192.168.100.255"
-dhcp_range="192.168.100.2,192.168.100.255"
+network="192.168.230.0"
+broadcast="192.168.230.255"
+dhcp_range="192.168.230.2,192.168.230.255"
 ssid="Pi-AP"
 wpa_passphrase="raspberry"
 ssid_broadcasting=true
@@ -41,6 +43,11 @@ else
     systemctl set-default multi-user.target
 fi
 
+# Add aliases to manage virtual monitor interface
+echo "function mon0up() { iw phy phy0 interface add mon0 type managed && ifconfig mon0 up; }
+function mon0down() { ifconfig mon0 down && iw dev mon0 del; }" > .bash_aliases
+chmod +x ~/.bash_aliases
+
 # Install additional packages
 apt-get install $additional_packages -y
 
@@ -54,7 +61,6 @@ echo "denyinterfaces wlan0" >> /etc/dhcpcd.conf
 echo "auto lo
 iface lo inet loopback
 
-auto eth0
 allow-hotplug eth0
 iface eth0 inet dhcp
 
@@ -65,9 +71,8 @@ netmask $netmask
 network $network
 broadcast $broadcast
 
-allow-hotplug mon0
-iface mon0 inet dhcp
-
+allow-hotplug wlan1
+iface wlan1 inet dhcp
 wpa-conf /etc/wpa_supplicant/wpa_supplicant.conf" > /etc/network/interfaces
 
 # Configure hostapd
@@ -93,6 +98,8 @@ sed -i "s/#DAEMON_CONF=\"\"/DAEMON_CONF=\"\/etc\/hostapd\/hostapd.conf\"/g" /etc
 # Enable/disable SSID broadcasting for the AP
 if [ "$ssid_broadcasting" = false ]; then
     echo "ignore_broadcast_ssid=1" >> /etc/hostapd/hostapd.conf
+else
+    echo "#ignore_broadcast_ssid=1" >> /etc/hostapd/hostapd.conf
 fi
 
 # Enable/disable MAC filtering for the AP
@@ -101,8 +108,13 @@ if [ "$mac_filtering" = true ]; then
 macaddr_acl=1
 accept_mac_file=/etc/hostapd/whitelist" >> /etc/hostapd/hostapd.conf
 
-    echo $filtered_macs | tr ' ' '\n' > /etc/hostapd/whitelist
+else
+    echo "
+#macaddr_acl=1
+#accept_mac_file=/etc/hostapd/whitelist" >> /etc/hostapd/hostapd.conf
 fi
+
+echo $filtered_macs | tr ' ' '\n' > /etc/hostapd/whitelist
 
 # Configure dnsmasq
 cp /etc/dnsmasq.conf /etc/dnsmasq.conf.orig
@@ -133,9 +145,10 @@ iptables -A FORWARD -i wlan0 -o mon0 -j ACCEPT
 
 # Set up iptables persistence
 iptables-save > /etc/iptables.conf
+
 echo "#!/bin/sh -e
 iptables-restore < /etc/iptables.conf
-exit0" > /etc/rc.local
+exit 0" > /etc/rc.local
 chmod +x /etc/rc.local
 
 # Enable hostapd and dnsmasq to run at boot
