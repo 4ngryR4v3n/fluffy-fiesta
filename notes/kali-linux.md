@@ -292,16 +292,15 @@ Append `denyinterfaces wlan0` to the end of /etc/dhcpcd.conf and replace the con
 auto lo
 iface lo inet loopback
 
-auto eth0
 allow-hotplug eth0
 iface eth0 inet dhcp
 
 auto wlan0
 iface wlan0 inet static
-address 192.168.100.1
+address 192.168.230.1
 netmask 255.255.255.0
-network 192.168.100.0
-broadcast 192.168.100.255
+network 192.168.230.0
+broadcast 192.168.230.255
 
 allow-hotplug wlan1
 iface wlan1 inet dhcp
@@ -336,7 +335,6 @@ auth_algs=1
 wpa=2
 wpa_key_mgmt=WPA-PSK
 rsn_pairwise=CCMP
-
 ssid=Pi-AP
 wpa_passphrase=raspberry
 ```
@@ -368,12 +366,12 @@ Replace the contents of /etc/dnsmasq.conf with
 
 ```
 interface=wlan0
-listen-address=192.168.100.1
+listen-address=192.168.230.1
 bind-interfaces
 server=8.8.8.8
 domain-needed
 bogus-priv
-dhcp-range=192.168.100.2,192.168.100.100,12h
+dhcp-range=192.168.230.2,192.168.230.255,12h
 ```
 
 #### Set up IPv4 forwarding
@@ -404,13 +402,23 @@ Apply the changes.
 
 `iptables -A FORWARD -i wlan0 -o wlan1 -j ACCEPT`
 
-Make the changes persistent across reboots.
+Backup your iptables configuration.
 
-`apt-get install iptables-persistent`
+`iptables-save > /etc/iptables.conf`
 
-**NOTE:** Be sure to select yes to save both IPv4 and IPv6 rules.
+Make the changes persistent across reboots by adding the following to /etc/rc.local. It is not usually created by default, so just create a new one.
 
-`systemctl enable netfilter-persistent`
+```
+#!/bin/sh -e
+
+iptables-restore < /etc/iptables.conf
+
+exit 0
+```
+
+Make the file executable.
+
+chmod +x /etc/rc.local
 
 #### Enable hostapd and dnsmasq to run at boot
 
