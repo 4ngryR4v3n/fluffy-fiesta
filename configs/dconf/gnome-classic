@@ -7,7 +7,7 @@ window-is-maximized=false
 [org/gtk/settings/file-chooser]
 date-format='regular'
 show-size-column=true
-show-hidden=true
+show-hidden=false
 sidebar-width=158
 clock-format='12h'
 window-position=(25, 28)
@@ -161,6 +161,7 @@ network-monitor-gio-name=''
 
 [org/gnome/mutter]
 center-new-windows=false
+dynamic-workspaces=true
 
 [org/gnome/software]
 check-timestamp=int64 1565843896
