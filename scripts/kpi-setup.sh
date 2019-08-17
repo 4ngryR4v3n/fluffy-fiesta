@@ -142,6 +142,10 @@ iptables -A FORWARD -i wlan0 -o eth0 -j ACCEPT
 iptables -t nat -A POSTROUTING -o mon0 -j MASQUERADE
 iptables -A FORWARD -i mon0 -o wlan0 -m state --state RELATED,ESTABLISHED -j ACCEPT
 iptables -A FORWARD -i wlan0 -o mon0 -j ACCEPT
+iptables -t nat -A POSTROUTING -o wlan1 -j MASQUERADE
+iptables -A FORWARD -i wlan1 -o wlan0 -m state --state RELATED,ESTABLISHED -j ACCEPT
+iptables -A FORWARD -i wlan0 -o wlan1 -j ACCEPT
+
 
 # Set up iptables persistence
 iptables-save > /etc/iptables.conf
